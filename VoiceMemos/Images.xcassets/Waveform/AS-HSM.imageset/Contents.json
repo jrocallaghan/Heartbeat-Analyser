@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "idiom" : "universal",
+      "filename" : "AS-HSM.PNG",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "AS-HSM@2x.PNG",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "AS-HSM@3x.PNG",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}

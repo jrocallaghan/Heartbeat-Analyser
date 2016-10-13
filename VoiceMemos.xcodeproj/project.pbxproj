@@ -1,0 +1,850 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A704C9F31DA776D3002E43D8 /* ApexLDOutputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A704C9F21DA776D3002E43D8 /* ApexLDOutputViewController.swift */; };
+		A704C9F51DA78185002E43D8 /* ApexLDConditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A704C9F41DA78185002E43D8 /* ApexLDConditionViewController.swift */; };
+		A704C9F71DA781C6002E43D8 /* AorticSitConditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A704C9F61DA781C6002E43D8 /* AorticSitConditionViewController.swift */; };
+		A704C9F91DA781F7002E43D8 /* PulmSupineConditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A704C9F81DA781F7002E43D8 /* PulmSupineConditionViewController.swift */; };
+		A77659CC1D9E726D00C2EC81 /* ChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77659CB1D9E726D00C2EC81 /* ChoiceViewController.swift */; };
+		A77659CE1DA346C600C2EC81 /* ApexSupineOutputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77659CD1DA346C600C2EC81 /* ApexSupineOutputViewController.swift */; };
+		A77659D71DA3672300C2EC81 /* ApexSupineConditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77659D61DA3672300C2EC81 /* ApexSupineConditionViewController.swift */; };
+		A7F8288B1DAA0B3E006D2F5A /* AorticSitOutputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F8288A1DAA0B3E006D2F5A /* AorticSitOutputViewController.swift */; };
+		A7F8288D1DAA0BF4006D2F5A /* PulmSupineOutputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F8288C1DAA0BF4006D2F5A /* PulmSupineOutputViewController.swift */; };
+		A7F8288F1DAB911D006D2F5A /* PSWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F8288E1DAB911A006D2F5A /* PSWebViewController.swift */; };
+		A7FBD8D31DAF30C200FE24F1 /* ALDWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FBD8D21DAF30C200FE24F1 /* ALDWebViewController.swift */; };
+		A7FBD8D51DAF33DF00FE24F1 /* ASWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FBD8D41DAF33DF00FE24F1 /* ASWebViewController.swift */; };
+		A7FBD8D91DAF357300FE24F1 /* AoSWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FBD8D81DAF357300FE24F1 /* AoSWebViewController.swift */; };
+		CD1273B51AA7EB5F00D9D393 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1273B41AA7EB5F00D9D393 /* AppDelegate.swift */; };
+		CD1273BA1AA7EB5F00D9D393 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD1273B81AA7EB5F00D9D393 /* Main.storyboard */; };
+		CD1273BC1AA7EB5F00D9D393 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD1273BB1AA7EB5F00D9D393 /* Images.xcassets */; };
+		CD1273BF1AA7EB5F00D9D393 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD1273BD1AA7EB5F00D9D393 /* LaunchScreen.xib */; };
+		CD1273CB1AA7EB5F00D9D393 /* VoiceMemosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1273CA1AA7EB5F00D9D393 /* VoiceMemosTests.swift */; };
+		CD1273DC1AA7EBDC00D9D393 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1273D51AA7EBDC00D9D393 /* BaseTableViewController.swift */; };
+		CD1273DD1AA7EBDC00D9D393 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1273D61AA7EBDC00D9D393 /* DetailViewController.swift */; };
+		CD1273DE1AA7EBDC00D9D393 /* NoVoiceSelectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1273D71AA7EBDC00D9D393 /* NoVoiceSelectedViewController.swift */; };
+		CD1273DF1AA7EBDC00D9D393 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1273D81AA7EBDC00D9D393 /* RecordViewController.swift */; };
+		CD1273E01AA7EBDC00D9D393 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1273D91AA7EBDC00D9D393 /* SplitViewController.swift */; };
+		CD1273E11AA7EBDC00D9D393 /* VoiceSearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1273DA1AA7EBDC00D9D393 /* VoiceSearchResultsController.swift */; };
+		CD1273E21AA7EBDC00D9D393 /* VoicesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1273DB1AA7EBDC00D9D393 /* VoicesTableViewController.swift */; };
+		CD1273E91AA7EBE300D9D393 /* KMCircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1273E41AA7EBE300D9D393 /* KMCircularProgressView.swift */; };
+		CD1273EB1AA7EBE300D9D393 /* KMVoiceRecordHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1273E61AA7EBE300D9D393 /* KMVoiceRecordHUD.swift */; };
+		CD1273EC1AA7EBE300D9D393 /* VoiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1273E71AA7EBE300D9D393 /* VoiceTableViewCell.swift */; };
+		CD1273ED1AA7EBE300D9D393 /* VoiceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD1273E81AA7EBE300D9D393 /* VoiceTableViewCell.xib */; };
+		CD1273F41AA7EBE800D9D393 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1273EF1AA7EBE800D9D393 /* CoreDataStack.swift */; };
+		CD1273F61AA7EBE800D9D393 /* Voice.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1273F11AA7EBE800D9D393 /* Voice.swift */; };
+		CD1273F71AA7EBE800D9D393 /* VoiceMemos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CD1273F21AA7EBE800D9D393 /* VoiceMemos.xcdatamodeld */; };
+		CD1273FB1AA7EBEC00D9D393 /* KMOverlayPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1273F91AA7EBEC00D9D393 /* KMOverlayPresentationController.swift */; };
+		CD1273FC1AA7EBEC00D9D393 /* KMOverlayTransitioner.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1273FA1AA7EBEC00D9D393 /* KMOverlayTransitioner.swift */; };
+		CD1273FF1AA7EBF600D9D393 /* AudioSessionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1273FE1AA7EBF600D9D393 /* AudioSessionHelper.swift */; };
+		CF26EF2F1D8414D000930B07 /* OutputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF26EF2E1D8414D000930B07 /* OutputViewController.swift */; };
+		CF26EF751D86C7AF00930B07 /* LBAudioDetective.m in Sources */ = {isa = PBXBuildFile; fileRef = CF26EF701D86C7AF00930B07 /* LBAudioDetective.m */; };
+		CF26EF761D86C7AF00930B07 /* LBAudioDetectiveFingerprint.m in Sources */ = {isa = PBXBuildFile; fileRef = CF26EF721D86C7AF00930B07 /* LBAudioDetectiveFingerprint.m */; };
+		CF26EF771D86C7AF00930B07 /* LBAudioDetectiveFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = CF26EF741D86C7AF00930B07 /* LBAudioDetectiveFrame.m */; };
+		CF5420CF1DAFBFF80044A686 /* EAFWrite.h in Headers */ = {isa = PBXBuildFile; fileRef = CF5420C91DAFBFF80044A686 /* EAFWrite.h */; };
+		CF5420D01DAFBFF80044A686 /* EAFWrite.mm in Sources */ = {isa = PBXBuildFile; fileRef = CF5420CA1DAFBFF80044A686 /* EAFWrite.mm */; };
+		CF5420D11DAFBFF80044A686 /* lowPassFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = CF5420CB1DAFBFF80044A686 /* lowPassFilter.h */; };
+		CF5420D21DAFBFF80044A686 /* lowPassFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5420CC1DAFBFF80044A686 /* lowPassFilter.m */; };
+		CF5420D31DAFBFF80044A686 /* signalCompare.h in Headers */ = {isa = PBXBuildFile; fileRef = CF5420CD1DAFBFF80044A686 /* signalCompare.h */; };
+		CF5420D41DAFBFF80044A686 /* signalCompare.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5420CE1DAFBFF80044A686 /* signalCompare.m */; };
+		CF6CF0EE1D8823B7004B91D4 /* FDWaveformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6CF0ED1D8823B7004B91D4 /* FDWaveformView.swift */; };
+		CF6CF0F11D88274F004B91D4 /* FDWaveformView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF6CF0F01D88274F004B91D4 /* FDWaveformView.framework */; };
+		CF6CF0F21D8828A4004B91D4 /* FDWaveformView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF6CF0F01D88274F004B91D4 /* FDWaveformView.framework */; };
+		CF6CF0F31D8828A4004B91D4 /* FDWaveformView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF6CF0F01D88274F004B91D4 /* FDWaveformView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CF8682631D632D1A000FC9F6 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF86825E1D632D1A000FC9F6 /* Accelerate.framework */; };
+		CF8682641D632D1A000FC9F6 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF86825F1D632D1A000FC9F6 /* AudioToolbox.framework */; };
+		CF8682661D632D1A000FC9F6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8682611D632D1A000FC9F6 /* AVFoundation.framework */; };
+		CF8682671D632D1A000FC9F6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8682621D632D1A000FC9F6 /* Foundation.framework */; };
+		CF8682701D65D214000FC9F6 /* innocent.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CF86826E1D65D214000FC9F6 /* innocent.mp3 */; };
+		CF8682711D65D214000FC9F6 /* normal.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CF86826F1D65D214000FC9F6 /* normal.mp3 */; };
+		F245F3FAC841E7AA0942992B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0588E348A241A320B4A31BFF /* Pods.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CD1273C51AA7EB5F00D9D393 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD1273A71AA7EB5F00D9D393 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CD1273AE1AA7EB5F00D9D393;
+			remoteInfo = VoiceMemos;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CF6CF0F41D8828A4004B91D4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CF6CF0F31D8828A4004B91D4 /* FDWaveformView.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0588E348A241A320B4A31BFF /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2128F1C5D9E45D3DC19FD5ED /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		96A75660244B2C7958DDEEC6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		A704C9F21DA776D3002E43D8 /* ApexLDOutputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApexLDOutputViewController.swift; sourceTree = "<group>"; };
+		A704C9F41DA78185002E43D8 /* ApexLDConditionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApexLDConditionViewController.swift; sourceTree = "<group>"; };
+		A704C9F61DA781C6002E43D8 /* AorticSitConditionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AorticSitConditionViewController.swift; sourceTree = "<group>"; };
+		A704C9F81DA781F7002E43D8 /* PulmSupineConditionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PulmSupineConditionViewController.swift; path = ../PulmSupineConditionViewController.swift; sourceTree = "<group>"; };
+		A77659CB1D9E726D00C2EC81 /* ChoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoiceViewController.swift; sourceTree = "<group>"; };
+		A77659CD1DA346C600C2EC81 /* ApexSupineOutputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApexSupineOutputViewController.swift; sourceTree = "<group>"; };
+		A77659CF1DA3527B00C2EC81 /* Early Systolic Murmur.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Early Systolic Murmur.caf"; sourceTree = "<group>"; };
+		A77659D01DA3527B00C2EC81 /* Holosystolic Murmur.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Holosystolic Murmur.caf"; sourceTree = "<group>"; };
+		A77659D11DA3527B00C2EC81 /* Late Systolic Murmur.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Late Systolic Murmur.caf"; sourceTree = "<group>"; };
+		A77659D21DA3527B00C2EC81 /* Mid-Systolic Click.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mid-Systolic Click.caf"; sourceTree = "<group>"; };
+		A77659D31DA3527B00C2EC81 /* Mid-Systolic Murmur.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mid-Systolic Murmur.caf"; sourceTree = "<group>"; };
+		A77659D41DA3527B00C2EC81 /* Single S1 S2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Single S1 S2.caf"; sourceTree = "<group>"; };
+		A77659D51DA3527B00C2EC81 /* Split S1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Split S1.caf"; sourceTree = "<group>"; };
+		A77659D61DA3672300C2EC81 /* ApexSupineConditionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApexSupineConditionViewController.swift; sourceTree = "<group>"; };
+		A7F8288A1DAA0B3E006D2F5A /* AorticSitOutputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AorticSitOutputViewController.swift; path = ../AorticSitOutputViewController.swift; sourceTree = "<group>"; };
+		A7F8288C1DAA0BF4006D2F5A /* PulmSupineOutputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PulmSupineOutputViewController.swift; path = ../PulmSupineOutputViewController.swift; sourceTree = "<group>"; };
+		A7F8288E1DAB911A006D2F5A /* PSWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PSWebViewController.swift; path = ../PSWebViewController.swift; sourceTree = "<group>"; };
+		A7FBD8D21DAF30C200FE24F1 /* ALDWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ALDWebViewController.swift; path = ../ALDWebViewController.swift; sourceTree = "<group>"; };
+		A7FBD8D41DAF33DF00FE24F1 /* ASWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASWebViewController.swift; path = ../ASWebViewController.swift; sourceTree = "<group>"; };
+		A7FBD8D81DAF357300FE24F1 /* AoSWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AoSWebViewController.swift; path = ../AoSWebViewController.swift; sourceTree = "<group>"; };
+		CD1273AF1AA7EB5F00D9D393 /* VoiceMemos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceMemos.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD1273B31AA7EB5F00D9D393 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD1273B41AA7EB5F00D9D393 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CD1273B91AA7EB5F00D9D393 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CD1273BB1AA7EB5F00D9D393 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		CD1273BE1AA7EB5F00D9D393 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		CD1273C41AA7EB5F00D9D393 /* VoiceMemosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoiceMemosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD1273C91AA7EB5F00D9D393 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD1273CA1AA7EB5F00D9D393 /* VoiceMemosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceMemosTests.swift; sourceTree = "<group>"; };
+		CD1273D51AA7EBDC00D9D393 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		CD1273D61AA7EBDC00D9D393 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		CD1273D71AA7EBDC00D9D393 /* NoVoiceSelectedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoVoiceSelectedViewController.swift; sourceTree = "<group>"; };
+		CD1273D81AA7EBDC00D9D393 /* RecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
+		CD1273D91AA7EBDC00D9D393 /* SplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
+		CD1273DA1AA7EBDC00D9D393 /* VoiceSearchResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceSearchResultsController.swift; sourceTree = "<group>"; };
+		CD1273DB1AA7EBDC00D9D393 /* VoicesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoicesTableViewController.swift; sourceTree = "<group>"; };
+		CD1273E41AA7EBE300D9D393 /* KMCircularProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KMCircularProgressView.swift; sourceTree = "<group>"; };
+		CD1273E61AA7EBE300D9D393 /* KMVoiceRecordHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KMVoiceRecordHUD.swift; sourceTree = "<group>"; };
+		CD1273E71AA7EBE300D9D393 /* VoiceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceTableViewCell.swift; sourceTree = "<group>"; };
+		CD1273E81AA7EBE300D9D393 /* VoiceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VoiceTableViewCell.xib; sourceTree = "<group>"; };
+		CD1273EF1AA7EBE800D9D393 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		CD1273F11AA7EBE800D9D393 /* Voice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Voice.swift; sourceTree = "<group>"; };
+		CD1273F31AA7EBE800D9D393 /* VoiceMemos.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VoiceMemos.xcdatamodel; sourceTree = "<group>"; };
+		CD1273F91AA7EBEC00D9D393 /* KMOverlayPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KMOverlayPresentationController.swift; sourceTree = "<group>"; };
+		CD1273FA1AA7EBEC00D9D393 /* KMOverlayTransitioner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KMOverlayTransitioner.swift; sourceTree = "<group>"; };
+		CD1273FE1AA7EBF600D9D393 /* AudioSessionHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioSessionHelper.swift; sourceTree = "<group>"; };
+		CF26EF2E1D8414D000930B07 /* OutputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutputViewController.swift; sourceTree = "<group>"; };
+		CF26EF6F1D86C7AF00930B07 /* LBAudioDetective.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBAudioDetective.h; sourceTree = "<group>"; };
+		CF26EF701D86C7AF00930B07 /* LBAudioDetective.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBAudioDetective.m; sourceTree = "<group>"; };
+		CF26EF711D86C7AF00930B07 /* LBAudioDetectiveFingerprint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBAudioDetectiveFingerprint.h; sourceTree = "<group>"; };
+		CF26EF721D86C7AF00930B07 /* LBAudioDetectiveFingerprint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBAudioDetectiveFingerprint.m; sourceTree = "<group>"; };
+		CF26EF731D86C7AF00930B07 /* LBAudioDetectiveFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBAudioDetectiveFrame.h; sourceTree = "<group>"; };
+		CF26EF741D86C7AF00930B07 /* LBAudioDetectiveFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBAudioDetectiveFrame.m; sourceTree = "<group>"; };
+		CF5420C91DAFBFF80044A686 /* EAFWrite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAFWrite.h; sourceTree = "<group>"; };
+		CF5420CA1DAFBFF80044A686 /* EAFWrite.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EAFWrite.mm; sourceTree = "<group>"; };
+		CF5420CB1DAFBFF80044A686 /* lowPassFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lowPassFilter.h; sourceTree = "<group>"; };
+		CF5420CC1DAFBFF80044A686 /* lowPassFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = lowPassFilter.m; sourceTree = "<group>"; };
+		CF5420CD1DAFBFF80044A686 /* signalCompare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = signalCompare.h; sourceTree = "<group>"; };
+		CF5420CE1DAFBFF80044A686 /* signalCompare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = signalCompare.m; sourceTree = "<group>"; };
+		CF6CF0ED1D8823B7004B91D4 /* FDWaveformView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FDWaveformView.swift; path = ../FDWaveformView.swift; sourceTree = "<group>"; };
+		CF6CF0F01D88274F004B91D4 /* FDWaveformView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FDWaveformView.framework; sourceTree = "<group>"; };
+		CF86825E1D632D1A000FC9F6 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		CF86825F1D632D1A000FC9F6 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		CF8682601D632D1A000FC9F6 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
+		CF8682611D632D1A000FC9F6 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		CF8682621D632D1A000FC9F6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CF86826E1D65D214000FC9F6 /* innocent.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = innocent.mp3; sourceTree = "<group>"; };
+		CF86826F1D65D214000FC9F6 /* normal.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = normal.mp3; sourceTree = "<group>"; };
+		CF8682721D65D7F8000FC9F6 /* VoiceMemos-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VoiceMemos-Bridging-Header.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CD1273AC1AA7EB5F00D9D393 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF8682671D632D1A000FC9F6 /* Foundation.framework in Frameworks */,
+				F245F3FAC841E7AA0942992B /* Pods.framework in Frameworks */,
+				CF6CF0F21D8828A4004B91D4 /* FDWaveformView.framework in Frameworks */,
+				CF6CF0F11D88274F004B91D4 /* FDWaveformView.framework in Frameworks */,
+				CF8682631D632D1A000FC9F6 /* Accelerate.framework in Frameworks */,
+				CF8682641D632D1A000FC9F6 /* AudioToolbox.framework in Frameworks */,
+				CF8682661D632D1A000FC9F6 /* AVFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD1273C11AA7EB5F00D9D393 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0141AB4ADAE5D8A19CFC2A94 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				96A75660244B2C7958DDEEC6 /* Pods.debug.xcconfig */,
+				2128F1C5D9E45D3DC19FD5ED /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A77659C81D9E235900C2EC81 /* Apex Supine */ = {
+			isa = PBXGroup;
+			children = (
+				A77659CF1DA3527B00C2EC81 /* Early Systolic Murmur.caf */,
+				A77659D01DA3527B00C2EC81 /* Holosystolic Murmur.caf */,
+				A77659D11DA3527B00C2EC81 /* Late Systolic Murmur.caf */,
+				A77659D21DA3527B00C2EC81 /* Mid-Systolic Click.caf */,
+				A77659D31DA3527B00C2EC81 /* Mid-Systolic Murmur.caf */,
+				A77659D41DA3527B00C2EC81 /* Single S1 S2.caf */,
+				A77659D51DA3527B00C2EC81 /* Split S1.caf */,
+			);
+			name = "Apex Supine";
+			sourceTree = "<group>";
+		};
+		C7C8773CC697D8CB86499AED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CF6CF0F01D88274F004B91D4 /* FDWaveformView.framework */,
+				CF86825E1D632D1A000FC9F6 /* Accelerate.framework */,
+				CF86825F1D632D1A000FC9F6 /* AudioToolbox.framework */,
+				CF8682601D632D1A000FC9F6 /* AudioUnit.framework */,
+				CF8682611D632D1A000FC9F6 /* AVFoundation.framework */,
+				CF8682621D632D1A000FC9F6 /* Foundation.framework */,
+				0588E348A241A320B4A31BFF /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CD1273A61AA7EB5F00D9D393 = {
+			isa = PBXGroup;
+			children = (
+				CD1273B11AA7EB5F00D9D393 /* VoiceMemos */,
+				CD1273C71AA7EB5F00D9D393 /* VoiceMemosTests */,
+				CD1273B01AA7EB5F00D9D393 /* Products */,
+				0141AB4ADAE5D8A19CFC2A94 /* Pods */,
+				C7C8773CC697D8CB86499AED /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CD1273B01AA7EB5F00D9D393 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CD1273AF1AA7EB5F00D9D393 /* VoiceMemos.app */,
+				CD1273C41AA7EB5F00D9D393 /* VoiceMemosTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CD1273B11AA7EB5F00D9D393 /* VoiceMemos */ = {
+			isa = PBXGroup;
+			children = (
+				CF26EF6E1D86C7AF00930B07 /* LBAudioDetective */,
+				CF0174071D7D61DE007217AB /* heartbeats */,
+				CD1273D41AA7EBDC00D9D393 /* Controller */,
+				CD1273EE1AA7EBE800D9D393 /* Model */,
+				CD1273E31AA7EBE300D9D393 /* View */,
+				CD1273F81AA7EBEC00D9D393 /* KMOverlayPresentation */,
+				CD1273FD1AA7EBF600D9D393 /* Helper */,
+				CD1273B41AA7EB5F00D9D393 /* AppDelegate.swift */,
+				CF8682721D65D7F8000FC9F6 /* VoiceMemos-Bridging-Header.h */,
+				CF86826E1D65D214000FC9F6 /* innocent.mp3 */,
+				CF86826F1D65D214000FC9F6 /* normal.mp3 */,
+				CD1273B81AA7EB5F00D9D393 /* Main.storyboard */,
+				CD1273BB1AA7EB5F00D9D393 /* Images.xcassets */,
+				CF5420C91DAFBFF80044A686 /* EAFWrite.h */,
+				CF5420CA1DAFBFF80044A686 /* EAFWrite.mm */,
+				CF5420CB1DAFBFF80044A686 /* lowPassFilter.h */,
+				CF5420CC1DAFBFF80044A686 /* lowPassFilter.m */,
+				CF5420CD1DAFBFF80044A686 /* signalCompare.h */,
+				CF5420CE1DAFBFF80044A686 /* signalCompare.m */,
+				CD1273B21AA7EB5F00D9D393 /* Supporting Files */,
+			);
+			path = VoiceMemos;
+			sourceTree = "<group>";
+		};
+		CD1273B21AA7EB5F00D9D393 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CD1273B31AA7EB5F00D9D393 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CD1273C71AA7EB5F00D9D393 /* VoiceMemosTests */ = {
+			isa = PBXGroup;
+			children = (
+				CD1273CA1AA7EB5F00D9D393 /* VoiceMemosTests.swift */,
+				CD1273C81AA7EB5F00D9D393 /* Supporting Files */,
+			);
+			path = VoiceMemosTests;
+			sourceTree = "<group>";
+		};
+		CD1273C81AA7EB5F00D9D393 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CD1273C91AA7EB5F00D9D393 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CD1273D41AA7EBDC00D9D393 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CF6CF0ED1D8823B7004B91D4 /* FDWaveformView.swift */,
+				CD1273D91AA7EBDC00D9D393 /* SplitViewController.swift */,
+				CD1273D51AA7EBDC00D9D393 /* BaseTableViewController.swift */,
+				CD1273DA1AA7EBDC00D9D393 /* VoiceSearchResultsController.swift */,
+				CD1273DB1AA7EBDC00D9D393 /* VoicesTableViewController.swift */,
+				CD1273D61AA7EBDC00D9D393 /* DetailViewController.swift */,
+				CD1273D81AA7EBDC00D9D393 /* RecordViewController.swift */,
+				CD1273D71AA7EBDC00D9D393 /* NoVoiceSelectedViewController.swift */,
+				A77659CD1DA346C600C2EC81 /* ApexSupineOutputViewController.swift */,
+				A77659D61DA3672300C2EC81 /* ApexSupineConditionViewController.swift */,
+				A7FBD8D41DAF33DF00FE24F1 /* ASWebViewController.swift */,
+				A704C9F21DA776D3002E43D8 /* ApexLDOutputViewController.swift */,
+				A704C9F41DA78185002E43D8 /* ApexLDConditionViewController.swift */,
+				A7FBD8D21DAF30C200FE24F1 /* ALDWebViewController.swift */,
+				A7F8288A1DAA0B3E006D2F5A /* AorticSitOutputViewController.swift */,
+				A704C9F61DA781C6002E43D8 /* AorticSitConditionViewController.swift */,
+				A7FBD8D81DAF357300FE24F1 /* AoSWebViewController.swift */,
+				A7F8288C1DAA0BF4006D2F5A /* PulmSupineOutputViewController.swift */,
+				A704C9F81DA781F7002E43D8 /* PulmSupineConditionViewController.swift */,
+				A7F8288E1DAB911A006D2F5A /* PSWebViewController.swift */,
+				CF26EF2E1D8414D000930B07 /* OutputViewController.swift */,
+				A77659CB1D9E726D00C2EC81 /* ChoiceViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CD1273E31AA7EBE300D9D393 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CD1273E41AA7EBE300D9D393 /* KMCircularProgressView.swift */,
+				CD1273E61AA7EBE300D9D393 /* KMVoiceRecordHUD.swift */,
+				CD1273E71AA7EBE300D9D393 /* VoiceTableViewCell.swift */,
+				CD1273E81AA7EBE300D9D393 /* VoiceTableViewCell.xib */,
+				CD1273BD1AA7EB5F00D9D393 /* LaunchScreen.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CD1273EE1AA7EBE800D9D393 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CD1273F21AA7EBE800D9D393 /* VoiceMemos.xcdatamodeld */,
+				CD1273EF1AA7EBE800D9D393 /* CoreDataStack.swift */,
+				CD1273F11AA7EBE800D9D393 /* Voice.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CD1273F81AA7EBEC00D9D393 /* KMOverlayPresentation */ = {
+			isa = PBXGroup;
+			children = (
+				CD1273F91AA7EBEC00D9D393 /* KMOverlayPresentationController.swift */,
+				CD1273FA1AA7EBEC00D9D393 /* KMOverlayTransitioner.swift */,
+			);
+			path = KMOverlayPresentation;
+			sourceTree = "<group>";
+		};
+		CD1273FD1AA7EBF600D9D393 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				CD1273FE1AA7EBF600D9D393 /* AudioSessionHelper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		CF0174071D7D61DE007217AB /* heartbeats */ = {
+			isa = PBXGroup;
+			children = (
+				A77659C81D9E235900C2EC81 /* Apex Supine */,
+			);
+			path = heartbeats;
+			sourceTree = "<group>";
+		};
+		CF26EF6E1D86C7AF00930B07 /* LBAudioDetective */ = {
+			isa = PBXGroup;
+			children = (
+				CF26EF6F1D86C7AF00930B07 /* LBAudioDetective.h */,
+				CF26EF701D86C7AF00930B07 /* LBAudioDetective.m */,
+				CF26EF711D86C7AF00930B07 /* LBAudioDetectiveFingerprint.h */,
+				CF26EF721D86C7AF00930B07 /* LBAudioDetectiveFingerprint.m */,
+				CF26EF731D86C7AF00930B07 /* LBAudioDetectiveFrame.h */,
+				CF26EF741D86C7AF00930B07 /* LBAudioDetectiveFrame.m */,
+			);
+			path = LBAudioDetective;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		CF6CF0891D86E810004B91D4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF5420D11DAFBFF80044A686 /* lowPassFilter.h in Headers */,
+				CF5420CF1DAFBFF80044A686 /* EAFWrite.h in Headers */,
+				CF5420D31DAFBFF80044A686 /* signalCompare.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		CD1273AE1AA7EB5F00D9D393 /* VoiceMemos */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD1273CE1AA7EB5F00D9D393 /* Build configuration list for PBXNativeTarget "VoiceMemos" */;
+			buildPhases = (
+				EEB3F7DEB8C8B9C13473DF09 /* Check Pods Manifest.lock */,
+				CD1273AC1AA7EB5F00D9D393 /* Frameworks */,
+				CD1273AB1AA7EB5F00D9D393 /* Sources */,
+				CD1273AD1AA7EB5F00D9D393 /* Resources */,
+				44451EC73D76A00D197C4C76 /* Embed Pods Frameworks */,
+				2CD6C27099002B0262CCA0AB /* Copy Pods Resources */,
+				CF6CF0891D86E810004B91D4 /* Headers */,
+				CF6CF0F41D8828A4004B91D4 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VoiceMemos;
+			productName = VoiceMemos;
+			productReference = CD1273AF1AA7EB5F00D9D393 /* VoiceMemos.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CD1273C31AA7EB5F00D9D393 /* VoiceMemosTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD1273D11AA7EB5F00D9D393 /* Build configuration list for PBXNativeTarget "VoiceMemosTests" */;
+			buildPhases = (
+				CD1273C01AA7EB5F00D9D393 /* Sources */,
+				CD1273C11AA7EB5F00D9D393 /* Frameworks */,
+				CD1273C21AA7EB5F00D9D393 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CD1273C61AA7EB5F00D9D393 /* PBXTargetDependency */,
+			);
+			name = VoiceMemosTests;
+			productName = VoiceMemosTests;
+			productReference = CD1273C41AA7EB5F00D9D393 /* VoiceMemosTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CD1273A71AA7EB5F00D9D393 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Zhouqi Mo";
+				TargetAttributes = {
+					CD1273AE1AA7EB5F00D9D393 = {
+						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = GCE8TBSYNC;
+					};
+					CD1273C31AA7EB5F00D9D393 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = CD1273AE1AA7EB5F00D9D393;
+					};
+				};
+			};
+			buildConfigurationList = CD1273AA1AA7EB5F00D9D393 /* Build configuration list for PBXProject "VoiceMemos" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CD1273A61AA7EB5F00D9D393;
+			productRefGroup = CD1273B01AA7EB5F00D9D393 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CD1273AE1AA7EB5F00D9D393 /* VoiceMemos */,
+				CD1273C31AA7EB5F00D9D393 /* VoiceMemosTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CD1273AD1AA7EB5F00D9D393 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD1273ED1AA7EBE300D9D393 /* VoiceTableViewCell.xib in Resources */,
+				CD1273BA1AA7EB5F00D9D393 /* Main.storyboard in Resources */,
+				CD1273BF1AA7EB5F00D9D393 /* LaunchScreen.xib in Resources */,
+				CF8682711D65D214000FC9F6 /* normal.mp3 in Resources */,
+				CD1273BC1AA7EB5F00D9D393 /* Images.xcassets in Resources */,
+				CF8682701D65D214000FC9F6 /* innocent.mp3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD1273C21AA7EB5F00D9D393 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2CD6C27099002B0262CCA0AB /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		44451EC73D76A00D197C4C76 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EEB3F7DEB8C8B9C13473DF09 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CD1273AB1AA7EB5F00D9D393 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD1273EC1AA7EBE300D9D393 /* VoiceTableViewCell.swift in Sources */,
+				CD1273FF1AA7EBF600D9D393 /* AudioSessionHelper.swift in Sources */,
+				A704C9F31DA776D3002E43D8 /* ApexLDOutputViewController.swift in Sources */,
+				A704C9F51DA78185002E43D8 /* ApexLDConditionViewController.swift in Sources */,
+				A7F8288B1DAA0B3E006D2F5A /* AorticSitOutputViewController.swift in Sources */,
+				A7FBD8D51DAF33DF00FE24F1 /* ASWebViewController.swift in Sources */,
+				CD1273DC1AA7EBDC00D9D393 /* BaseTableViewController.swift in Sources */,
+				CF26EF751D86C7AF00930B07 /* LBAudioDetective.m in Sources */,
+				A7F8288D1DAA0BF4006D2F5A /* PulmSupineOutputViewController.swift in Sources */,
+				A7FBD8D91DAF357300FE24F1 /* AoSWebViewController.swift in Sources */,
+				CD1273FB1AA7EBEC00D9D393 /* KMOverlayPresentationController.swift in Sources */,
+				CD1273E01AA7EBDC00D9D393 /* SplitViewController.swift in Sources */,
+				CF26EF2F1D8414D000930B07 /* OutputViewController.swift in Sources */,
+				CD1273E11AA7EBDC00D9D393 /* VoiceSearchResultsController.swift in Sources */,
+				A7FBD8D31DAF30C200FE24F1 /* ALDWebViewController.swift in Sources */,
+				CD1273FC1AA7EBEC00D9D393 /* KMOverlayTransitioner.swift in Sources */,
+				CD1273B51AA7EB5F00D9D393 /* AppDelegate.swift in Sources */,
+				CF26EF771D86C7AF00930B07 /* LBAudioDetectiveFrame.m in Sources */,
+				CD1273F41AA7EBE800D9D393 /* CoreDataStack.swift in Sources */,
+				CD1273DF1AA7EBDC00D9D393 /* RecordViewController.swift in Sources */,
+				A77659CE1DA346C600C2EC81 /* ApexSupineOutputViewController.swift in Sources */,
+				CF6CF0EE1D8823B7004B91D4 /* FDWaveformView.swift in Sources */,
+				A77659D71DA3672300C2EC81 /* ApexSupineConditionViewController.swift in Sources */,
+				CF5420D41DAFBFF80044A686 /* signalCompare.m in Sources */,
+				A7F8288F1DAB911D006D2F5A /* PSWebViewController.swift in Sources */,
+				A77659CC1D9E726D00C2EC81 /* ChoiceViewController.swift in Sources */,
+				A704C9F91DA781F7002E43D8 /* PulmSupineConditionViewController.swift in Sources */,
+				CD1273EB1AA7EBE300D9D393 /* KMVoiceRecordHUD.swift in Sources */,
+				CD1273F71AA7EBE800D9D393 /* VoiceMemos.xcdatamodeld in Sources */,
+				A704C9F71DA781C6002E43D8 /* AorticSitConditionViewController.swift in Sources */,
+				CD1273E91AA7EBE300D9D393 /* KMCircularProgressView.swift in Sources */,
+				CF5420D01DAFBFF80044A686 /* EAFWrite.mm in Sources */,
+				CF5420D21DAFBFF80044A686 /* lowPassFilter.m in Sources */,
+				CD1273DD1AA7EBDC00D9D393 /* DetailViewController.swift in Sources */,
+				CD1273F61AA7EBE800D9D393 /* Voice.swift in Sources */,
+				CF26EF761D86C7AF00930B07 /* LBAudioDetectiveFingerprint.m in Sources */,
+				CD1273E21AA7EBDC00D9D393 /* VoicesTableViewController.swift in Sources */,
+				CD1273DE1AA7EBDC00D9D393 /* NoVoiceSelectedViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD1273C01AA7EB5F00D9D393 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD1273CB1AA7EB5F00D9D393 /* VoiceMemosTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CD1273C61AA7EB5F00D9D393 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CD1273AE1AA7EB5F00D9D393 /* VoiceMemos */;
+			targetProxy = CD1273C51AA7EB5F00D9D393 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CD1273B81AA7EB5F00D9D393 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD1273B91AA7EB5F00D9D393 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CD1273BD1AA7EB5F00D9D393 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD1273BE1AA7EB5F00D9D393 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			path = ..;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CD1273CC1AA7EB5F00D9D393 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CD1273CD1AA7EB5F00D9D393 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CD1273CF1AA7EB5F00D9D393 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96A75660244B2C7958DDEEC6 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/**",
+					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = "\"$(PROJECT_DIR)/VoiceMemos/\"/**";
+				INFOPLIST_FILE = VoiceMemos/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = MonashUniversity;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/VoiceMemos/VoiceMemos-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CD1273D01AA7EB5F00D9D393 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2128F1C5D9E45D3DC19FD5ED /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/**",
+					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = "\"$(PROJECT_DIR)/VoiceMemos/\"/**";
+				INFOPLIST_FILE = VoiceMemos/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = MonashUniversity;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/VoiceMemos/VoiceMemos-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CD1273D21AA7EB5F00D9D393 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = VoiceMemosTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VoiceMemos.app/VoiceMemos";
+			};
+			name = Debug;
+		};
+		CD1273D31AA7EB5F00D9D393 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = VoiceMemosTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VoiceMemos.app/VoiceMemos";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CD1273AA1AA7EB5F00D9D393 /* Build configuration list for PBXProject "VoiceMemos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD1273CC1AA7EB5F00D9D393 /* Debug */,
+				CD1273CD1AA7EB5F00D9D393 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD1273CE1AA7EB5F00D9D393 /* Build configuration list for PBXNativeTarget "VoiceMemos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD1273CF1AA7EB5F00D9D393 /* Debug */,
+				CD1273D01AA7EB5F00D9D393 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD1273D11AA7EB5F00D9D393 /* Build configuration list for PBXNativeTarget "VoiceMemosTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD1273D21AA7EB5F00D9D393 /* Debug */,
+				CD1273D31AA7EB5F00D9D393 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CD1273F21AA7EBE800D9D393 /* VoiceMemos.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CD1273F31AA7EBE800D9D393 /* VoiceMemos.xcdatamodel */,
+			);
+			currentVersion = CD1273F31AA7EBE800D9D393 /* VoiceMemos.xcdatamodel */;
+			path = VoiceMemos.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = CD1273A71AA7EB5F00D9D393 /* Project object */;
+}
