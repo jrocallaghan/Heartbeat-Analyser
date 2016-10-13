@@ -442,6 +442,7 @@ extension DetailViewController: AVAudioRecorderDelegate {
             playback.playButton.hidden = false
             playback.progressSlider.hidden = false
             testButton.hidden = false
+            filterButton.hidden = false
             recordButton.setTitle("", forState: .Normal)
             
             let asset = AVURLAsset(URL: recorder.url, options: nil)
@@ -564,11 +565,13 @@ extension DetailViewController: UITableViewDataSource {
                 playback.playButton.hidden = false
                 playback.progressSlider.hidden = false
                 testButton.hidden = false
+                filterButton.hidden = false
                 recordButton.setTitle("", forState: .Normal)
             } else {
                 playback.playButton.hidden = true
                 playback.progressSlider.hidden = true
                 testButton.hidden = true
+                filterButton.hidden = true
                 recordButton.setTitle(" Tap to record", forState: .Normal)
             }
             

@@ -455,7 +455,7 @@
 				TargetAttributes = {
 					CD1273AE1AA7EB5F00D9D393 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = GCE8TBSYNC;
+						DevelopmentTeam = 97K2TH9YMT;
 					};
 					CD1273C31AA7EB5F00D9D393 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -734,7 +734,7 @@
 				INFOPLIST_FILE = VoiceMemos/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = MonashUniversity;
+				PRODUCT_BUNDLE_IDENTIFIER = JordanHeartbeatAppTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/VoiceMemos/VoiceMemos-Bridging-Header.h";
@@ -757,7 +757,7 @@
 				INFOPLIST_FILE = VoiceMemos/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = MonashUniversity;
+				PRODUCT_BUNDLE_IDENTIFIER = JordanHeartbeatAppTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/VoiceMemos/VoiceMemos-Bridging-Header.h";

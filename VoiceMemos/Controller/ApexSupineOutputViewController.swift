@@ -18,7 +18,7 @@ class ApexSupineOutputViewController: UIViewController {
     ///TEST ONLY/////
     ////CHANGE AFTER////////
     var apexsup = "AS-MSC"
-    var supine = ["Early Systolic Murmur", "Holosystolic Murmur","Late Systolic Murmur", "Mid-Systolic Click","Mid-Systolic Murmur","Single S1 S2","Split S1" ]
+    var supine = ["Early Systolic Murmur", "Holosystolic Murmur","Late Systolic Murmur", "Mid-Systolic Click","Mid-Systolic Murmur","Single S1 S2","Split S1"]
     
     //Setting up waveform view and waeform target connection
     @IBOutlet weak var WaveformView: FDWaveformView!
@@ -70,30 +70,34 @@ class ApexSupineOutputViewController: UIViewController {
 //        self.WaveformView.wavesColor = UIColor.blueColor()
         
 //
-//        signalCompare(self.supine)
-//    }
+        signalCompare(self.supine)
+    }
 //
-//    func signalCompare(type: [String]){
+    func signalCompare(type: [String]){
 //    
-//        var detective = LBAudioDetectiveNew()
-//        var bundle = NSBundle.mainBundle()
-//        var matchArray = [Float32]()
-//    
-//        dispatch_async(dispatch_get_main_queue(), {() -> Void in
-//            
-//            (type as NSArray).enumerateObjectsUsingBlock({(sequenceType: Any, idx: Int, stop: UnsafeMutablePointer<ObjCBool>) -> Void in
-//                
-//                if let str = sequenceType as? String {
-//                    
-//                    var sequenceURL = bundle.URLForResource(str, withExtension: "caf")!
-//                    
-//                    var match: Float32 = 0.0
-//                    LBAudioDetectiveCompareAudioURLs(detective, self.inputURL, sequenceURL, 0, &match)
-//                    print("Match =  \(match)")
-//                    matchArray.append(match)
-//                }
-//            })
-//            
+        var detective = LBAudioDetectiveNew()
+        var bundle = NSBundle.mainBundle()
+        var matchArray = [Float32]()
+    
+        dispatch_async(dispatch_get_main_queue(), {() -> Void in
+            
+            (type as NSArray).enumerateObjectsUsingBlock({(sequenceType: Any, idx: Int, stop: UnsafeMutablePointer<ObjCBool>) -> Void in
+                
+                if let str = sequenceType as? String {
+                    
+                    var sequenceURL = bundle.URLForResource(str, withExtension: "caf")!
+                    
+                    var match: Float32 = 0.0
+                    LBAudioDetectiveCompareAudioURLs(detective, self.inputURL, sequenceURL, 0, &match)
+                    print("Match =  \(match)")
+                    matchArray.append(match) //match array holds all the percentage matches
+                }
+            })
+        })
+        LBAudioDetectiveDispose(detective)
+    }
+
+//
 //            var maxMatch = matchArray.maxElement()
 //            var maxLocationIndex = matchArray.indexOf(maxMatch!)
 //            var maxLocationInt = matchArray.startIndex.distanceTo(maxLocationIndex!)
@@ -140,13 +144,6 @@ class ApexSupineOutputViewController: UIViewController {
 //
 //        })
 
-    
-    
-    }
-    
-    
-    
-    
-    
 
 }
+
