@@ -89,60 +89,21 @@ OSStatus audioFingerprint(NSURL* inFileURL) {
     
     floatDataArray = (float *)realloc(floatDataArray, sizeof(float) * j); //This resizes the array to fit the amount of samples we actually use
     
-    //printf("\nj is: %i",j);
-    //printf("\nfloat[j] is: %f",floatDataArray[j-1]);
     
-    //put filter code for the floatDataArray here
-    /*
-     for (int i=0; i<j-1;i++) {
-     floatDataArray[i]= 0;
-     }*/
-    
-    // Now we will put the data back into the audio buffer and make a new file
-    //bufferList.mBuffers[0].mData = floatDataArray;
-    
-    //////////////////FILTER/////////////////
-    
-    float Fc = 2000.0;
-    float Q = 1/sqrt(2);
-    float samplingRate = kSamplingRate;
-    
-    float omega = 2*M_PI*Fc/samplingRate;
-    float omegaS = sin(omega);
-    float omegaC = cos(omega);
-    float alpha = omegaS / (2*Q);
-    
-    
-    float a0 = 1 + alpha;
-    float b0 = ((1-omegaC)/2)   / a0;
-    float b1 = ((1-omegaC))     / a0;
-    float b2 = ((1-omegaC)/2)   / a0;
-    float a1 = (-2 * omegaC)    / a0;
-    float a2 = (1 - alpha)      / a0;
-    
-    float filter[5];
-    filter[0] = b0;
-    filter[1] = b1;
-    filter[2] = b2;
-    filter[3] = a1;
-    filter[4] = a2;
-    
-    float *outputData = (float *)malloc(sizeof(float) * j);
-    vDSP_deq22(floatDataArray, 1, filter, outputData, 1, j-2);
     
     //////////////AMPLIFY AND NORMALISE///////////////
     
     //Get abs max value
-    float maxOutputValue = fabs(outputData[0]);
+    float maxOutputValue = fabs(floatDataArray[0]);
     for (int i=1;i<j;i++){
-        if (fabs(outputData[i])>maxOutputValue){
-            maxOutputValue = fabs(outputData[i]);
+        if (fabs(floatDataArray[i])>maxOutputValue){
+            maxOutputValue = fabs(floatDataArray[i]);
         }
     }
     
     //Normalise so that abs max = 1 nad everything else ranges from -1 to 1 (simultaneously amplifies)
     for (int i=0;i<j;i++){
-        outputData[i] = outputData[i]/maxOutputValue;
+        floatDataArray[i] = floatDataArray[i]/maxOutputValue;
     }
 //////////////////////////CREATE WINDOWS WITH DATA/////////////////////////////////////
     
@@ -186,7 +147,7 @@ OSStatus audioFingerprint(NSURL* inFileURL) {
         //create temporary frame holding the sliding window values
         
         for (int p=0; p<fftFrameSize; p++) {
-            tempFrame[p] = outputData[(fftFrameSpace*i)+p];
+            tempFrame[p] = floatDataArray[(fftFrameSpace*i)+p];
             //printf("\n%i    out: %f     temp: %f",p,outputData[p], tempFrame[p]);
         }
         
@@ -206,82 +167,253 @@ OSStatus audioFingerprint(NSURL* inFileURL) {
     
     // We now have specMatrix that looks like this:
     // Time 1: [    FFT    ]  where FFT is the FFT frame holding all the frequencies magnitudes
-    // Time 2: [    FFT    ]  there are 2048 elements across for each frequency
+    // Time 2: [    FFT    ]  there are 1024 elements across for each frequency
     // Time 3: [    FFT    ]  we want to simplify this into 32 frequency bins to improve speed
     // Time N: [    FFT    ]  the bins will be linearly spaced
     
+    
+    ///////////////REDUCE THE SPECTROGRAM MATRIX////////////////////
+    
     int numBins = 32;
 
-    float binSpace = fftFrameSize/numBins;
+    float binSpace = (fftFrameSize/2)/numBins;
 
     
     
     float **smallSpec;   //dynamically allocates the 2D spectrogram matrix;
-    specMatrix = (float **)malloc(sizeof(float *)*numFrames);
+    smallSpec = (float **)malloc(sizeof(float *)*numFrames);
     for (int i=0;i<numFrames; i++){
         smallSpec[i] = (float *)malloc(sizeof(float)*numBins);
     }
     
-    //smallSpec = {{0,0},{0,0}};
+    //intitialise the small spec to 0
     
+    for (int a=0; a<numFrames; a++) {
+        for (int b=0; b<numBins; b++) {
+            smallSpec[a][b] = 0.0; //make everthing 0
+        }
+    }
+    
+    
+    //reduce it
+    float smallFrame[fftFrameSize/2];
     
     for (int i=0; i<numFrames; i++){
         
-        for (int p=0; p<fftFrameSize; p++) {
-            tempFrame[p] = specMatrix[i][p]; //reuse the tempFrame to hold 1 row of the specMatrix
+        for (int p=0; p<(fftFrameSize/2); p++) {
+            smallFrame[p] = specMatrix[i][p]; //reuse the tempFrame to hold 1 row of the specMatrix
+            //printf("\n %f",smallFrame[p]);
             
         }
         
-        for (int j=0; j<numFrames;j++) {
-        
-        
+        for (int j=0; j<numBins;j++) {
             for (int q=0; q<binSpace;q++) {
             
-                smallSpec[i][j] += tempFrame[q];
+                smallSpec[i][j] += smallFrame[(32*j)+q];
             }
-            printf("\ni: %i   j: %i      out: %f",i,j,smallSpec[i][j]);
+        }
+        for (int j=0; j<numBins;j++) {
+            //printf("\ni: %i   j: %i      out: %f",i,j,smallSpec[i][j]);
         }
     }
     
     
     /////////////////PERFORM WAVELET TRANSFORM ON ARRAY//////////////////////
-    float tmp[numBins];
-    int inCount= numBins;
+
+    //how big will the fingerprint array need to be?
+    int fingerprintArraySize=0;
+    for (int i=0; i<floor(numFrames/128); i++) {
+        fingerprintArraySize++;
+    }
+    if (fingerprintArraySize == 0){ //make sure we have enough data for a single fingerprint
+        printf("not enough data, record for more than 1.5 seconds!");
+        return 0; //exit the function if we dont have a enough fingerprint
+    }
+
+    //Create the 2D boolean fingerprint array holding each subfingerprint
     
-    for (int j=0; j<numFrames; j++) {
+    BOOL fingerprintArray[fingerprintArraySize][128*32*2];
+    BOOL fingerprint[128*32*2]; //temp fingerprint to be put in the main fingerprint array
+    
+    float imageBlock[128][32];
+    
+    
+    for (int i=0; i<floor(numFrames/128); i++) { //go down the array doing wavlet on each 128*32 block
         
-        while (inCount >1){
-            inCount /= 2;
-        
-            for (int i=0; i<inCount; i++) {
-                tmp[i]          = ((smallSpec[j][2*i] + smallSpec[j][2*i+1])/2.0);
-                tmp[inCount+i]  = ((smallSpec[j][2*i] - smallSpec[j][2*i+1])/2.0);
-            }
-        
-            for (int i=0; i<2*inCount; i++){
-                smallSpec[j][i]=tmp[i];
+        for (int a=0; a<128; a++) {
+            for (int b=0; b<32; b++) {
+                imageBlock[a][b] = smallSpec[a][b]; //create 128*32 block holding the reduced spectrogram data
             }
         }
+
+        for (int j=0;j<128;j++){        //wavelet on the rows
+            harrWavelet(imageBlock[j],32);
+        }
+        //put some code in here to do the colomms
+        
+        
+        for (int q=0; q<32 ;q++) {    //wavelet on the columns
+            
+            float column[128];
+        
+            for (int j=0; j<128; j++) {
+                column[j]=imageBlock[j][q];  //fill column array with a single column
+            }
+            
+            harrWavelet(column, 128); //wavelet on the single col
+            
+            for (int j=0; j<128; j++) {
+                imageBlock[j][q]=column[j];  //put the column back into the block
+            }
+            
+        }
+        //we have done the 2D wavelet on 128*32 block
+        //now we get fingerprint and put in the fingerprint array
+        memset(fingerprint, 0, sizeof(fingerprint));
+        fingerprintGet(imageBlock, fingerprint);
+        
+        //put fingerprint in the main array
+        
+        for (int j=0; j<(128*32*2); j++) {
+            fingerprintArray[i][j]= fingerprint[j];
+        }
+        
     }
     
-    ////////////////////////////HASH DATA////////////////////////////////
+    //we now have the fingerprint array
+    //[fingerprint 1]
+    //[fingerprint 2]
+    //[fingerprint 3]
+    //      etc
     
     
+    for (int i=0; i<fingerprintArraySize;i++) {
+        for (int j=0; j<(128*32*2); j++) {
+            printf("%i ",fingerprintArray[0][j]);
+        }
+        printf("\n\n\n");
+    }
+
+
+    //make sure the small smec was initialised!!!
+    ///
+    //
+    //
+    //
+    //
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     
     
     printf("\ndone");
     return 0;
     
 }
+
+
+
+
+void harrWavelet(float array[], int length) {
+    
+    float tmpRow[length];
+    int inCount= length;
+    
+
+    while (inCount >1){
+        inCount /= 2;
+        
+        for (int i=0; i<inCount; i++) {
+            tmpRow[i]          = ((array[2*i] + array[2*i+1])/2.0);
+            tmpRow[inCount+i]  = ((array[2*i] - array[2*i+1])/2.0);
+        }
+        
+        for (int i=0; i<2*inCount; i++){
+            array[i]=tmpRow[i];
+        }
+    }
+}
+
+
+void fingerprintGet(float image[128][32], BOOL* fingerprint){
+    
+    int numRows=128;
+    int numCols=32;
+    
+    float array[2][numRows*numCols];
+    
+    //create array holding all the image elements in 1 row and its indexes in the other row
+    int index=0;
+    for (int row =0; row<numRows; row++) {
+        for (int col =0; row<numRows; row++) {
+            array[0][row*numCols+col] = image[row][col];
+            array[1][row*numCols+col] = index;
+            index++;
+        }
+    }
+    //sort the array by magnitude and hold the index
+    quickSort(array, 0, 128*32-1);
+    
+    //first we need to extract top 200 wavelets
+    
+    for (int i=0; i<200; i++) {
+        if (array[0][i]>0.0) {
+            fingerprint[(int)(2*array[1][i])] = YES;
+        }
+        else if (array[0][i]<0.0) {
+            fingerprint[(int)((2*array[1][i]))+1] = YES;
+        }
+        
+    }
+
+}
+
+
+void quickSort( float a[2][128*32], int l, int r)
+{
+    int j;
+    
+    if( l < r )
+    {
+        // divide and conquer
+        j = partition( a, l, r);
+        quickSort( a, l, j-1);
+        quickSort( a, j+1, r);
+    }
+    
+}
+
+
+
+int partition( float a[2][128*32], int l, int r) {
+    int  i, j;
+    float pivot, t, q;
+    pivot = a[0][l];
+    i = l; j = r+1;
+    
+    while( 1)
+    {
+        do ++i; while( a[0][i] <= pivot && i <= r );
+        do --j; while( a[0][j] > pivot );
+        if( i >= j ) break;
+        t = a[0][i]; a[0][i] = a[0][j]; a[0][j] = t;
+        q = a[1][i]; a[1][i] = a[1][j]; a[1][j] = q;
+    }
+    t = a[0][l]; a[0][l] = a[0][j]; a[0][j] = t;
+    q = a[1][l]; a[1][l] = a[1][j]; a[1][j] = q;
+    return j;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

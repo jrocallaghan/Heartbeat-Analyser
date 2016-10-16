@@ -30,7 +30,7 @@ class DetailViewController: UIViewController {
     var filterURL: NSURL!
     var initURL: NSURL!
     @IBAction func filterURL(sender: UIButton) {
-        switch (filterState) {
+        /*switch (filterState) {
         case 0: filterButton.backgroundColor = UIColor.greenColor()
                 filterButton.setTitle("Filter On", forState: UIControlState.Normal)
         
@@ -48,7 +48,15 @@ class DetailViewController: UIViewController {
                 filterState = 0
                 break
         default: print("error occured changing filter state")
+        }*/
+        
+        if self.recordingHasUpdates {
+            initURL = self.tmpStoreURL
+        } else {
+            initURL = self.directoryURL.URLByAppendingPathComponent(self.voice.filename!)
         }
+        
+        audioFingerprint(initURL)
         
         
     }
