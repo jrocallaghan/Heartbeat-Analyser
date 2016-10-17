@@ -154,6 +154,8 @@ NSURL* lowPassFilter(NSURL* inFileURL) {
     free(outputBuffer);
     free(floatDataArray);
     free(outputData);
+    ExtAudioFileDispose(fileRef);
+    
 
     return destURL;
 }

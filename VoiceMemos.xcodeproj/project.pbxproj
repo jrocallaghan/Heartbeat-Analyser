@@ -62,6 +62,7 @@
 		CF8682671D632D1A000FC9F6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8682621D632D1A000FC9F6 /* Foundation.framework */; };
 		CF8682701D65D214000FC9F6 /* innocent.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CF86826E1D65D214000FC9F6 /* innocent.mp3 */; };
 		CF8682711D65D214000FC9F6 /* normal.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CF86826F1D65D214000FC9F6 /* normal.mp3 */; };
+		CFD93C0E1DB498D100AC4955 /* compareFingerprint.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD93C0D1DB498D100AC4955 /* compareFingerprint.m */; };
 		F245F3FAC841E7AA0942992B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0588E348A241A320B4A31BFF /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -162,6 +163,8 @@
 		CF86826E1D65D214000FC9F6 /* innocent.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = innocent.mp3; sourceTree = "<group>"; };
 		CF86826F1D65D214000FC9F6 /* normal.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = normal.mp3; sourceTree = "<group>"; };
 		CF8682721D65D7F8000FC9F6 /* VoiceMemos-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VoiceMemos-Bridging-Header.h"; sourceTree = "<group>"; };
+		CFD93C0D1DB498D100AC4955 /* compareFingerprint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = compareFingerprint.m; sourceTree = "<group>"; };
+		CFD93C0F1DB4991700AC4955 /* compareFingerprint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = compareFingerprint.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,6 +271,8 @@
 				CF5420CC1DAFBFF80044A686 /* lowPassFilter.m */,
 				CF5420CD1DAFBFF80044A686 /* signalCompare.h */,
 				CF5420CE1DAFBFF80044A686 /* signalCompare.m */,
+				CFD93C0F1DB4991700AC4955 /* compareFingerprint.h */,
+				CFD93C0D1DB498D100AC4955 /* compareFingerprint.m */,
 				CD1273B21AA7EB5F00D9D393 /* Supporting Files */,
 			);
 			path = VoiceMemos;
@@ -579,6 +584,7 @@
 				CD1273F41AA7EBE800D9D393 /* CoreDataStack.swift in Sources */,
 				CD1273DF1AA7EBDC00D9D393 /* RecordViewController.swift in Sources */,
 				A77659CE1DA346C600C2EC81 /* ApexSupineOutputViewController.swift in Sources */,
+				CFD93C0E1DB498D100AC4955 /* compareFingerprint.m in Sources */,
 				CF6CF0EE1D8823B7004B91D4 /* FDWaveformView.swift in Sources */,
 				A77659D71DA3672300C2EC81 /* ApexSupineConditionViewController.swift in Sources */,
 				CF5420D41DAFBFF80044A686 /* signalCompare.m in Sources */,

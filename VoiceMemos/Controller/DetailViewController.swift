@@ -56,7 +56,7 @@ class DetailViewController: UIViewController {
             initURL = self.directoryURL.URLByAppendingPathComponent(self.voice.filename!)
         }
         
-        audioFingerprint(initURL)
+        compareFingerprint(initURL, initURL)
         
         
     }
