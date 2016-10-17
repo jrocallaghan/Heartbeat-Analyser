@@ -10,6 +10,7 @@ import UIKit
 
 class ApexSupineConditionViewController: UIViewController {
 //Global variables
+    var URL : NSURL!
     var condition = String()
     var details = String ()
     var diagnosis = String ()
@@ -21,6 +22,12 @@ class ApexSupineConditionViewController: UIViewController {
     @IBOutlet weak var labelname: UILabel!
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var labeldetails: UILabel!
+    @IBOutlet weak var waveform: FDWaveformView!
+    
+    //Unwind segue stuff
+    @IBAction func unwindtoASCondition(segue: UIStoryboardSegue){
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,14 +43,22 @@ class ApexSupineConditionViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
 //  detailscond()
+       self.waveform.audioURL = URL
+       self.waveform.progressSamples = 0
+       self.waveform.doesAllowScroll = true
+       self.waveform.doesAllowStretch = true
+       self.waveform.doesAllowScrubbing = false
+       self.waveform.wavesColor = UIColor.darkGrayColor()
+      
        labeldetails.text = details
        labelname.text = diagnosis
         
     }
     
     
-    @IBAction func webinfo(sender: AnyObject) {
+    
         
+    @IBAction func webinfo(sender: UIButton) {
         // Create the alert controller
         let alert = UIAlertController(title: "Title", message: "Message", preferredStyle: .Alert)
         

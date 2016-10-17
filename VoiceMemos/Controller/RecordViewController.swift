@@ -15,7 +15,7 @@ class RecordViewController: UIViewController {
     
     var audioRecorder: AVAudioRecorder?
     var meterTimer: NSTimer?
-    let recordDuration = 120.0
+    let recordDuration = 20.0
     @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var voiceRecordHUD: KMVoiceRecordHUD!
     

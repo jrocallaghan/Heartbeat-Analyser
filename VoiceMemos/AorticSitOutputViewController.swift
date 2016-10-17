@@ -11,15 +11,16 @@ import UIKit
 class AorticSitOutputViewController: UIViewController {
 
     var aorticsit = "sss"
+    var URL : NSURL!
     
     //Target Connections
     
-    @IBOutlet weak var waveform: UIView!
+    @IBOutlet weak var WaveformView: FDWaveformView!
     @IBOutlet weak var diagnosis1: UILabel!
-    @IBOutlet weak var diagnosis2: UILabel!
-    @IBOutlet weak var diagnosis3: UILabel!
-    @IBOutlet weak var diagnosis4: UILabel!
-    @IBOutlet weak var diagnosis5: UILabel!
+    //unwind segue
+    @IBAction func unwindtoAOSOutput(segue: UIStoryboardSegue){
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,11 +38,24 @@ class AorticSitOutputViewController: UIViewController {
     
     //preparing data for 2nd VC
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "aosout" {
         let VC2 : AorticSitConditionViewController = segue.destinationViewController as! AorticSitConditionViewController
         VC2.condition = aorticsit
+        VC2.URL = self.URL
+        }
         
     }
 
+    
+    override func viewDidAppear(animated: Bool) {
+        self.WaveformView.audioURL = URL
+        self.WaveformView.progressSamples = 0
+        self.WaveformView.doesAllowScroll = true
+        self.WaveformView.doesAllowStretch = true
+        self.WaveformView.doesAllowScrubbing = false
+        self.WaveformView.wavesColor = UIColor.blueColor()
+        
+    }
     /*
     // MARK: - Navigation
 

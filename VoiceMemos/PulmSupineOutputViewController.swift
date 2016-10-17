@@ -11,16 +11,15 @@ import UIKit
 class PulmSupineOutputViewController: UIViewController {
 
     var pulm = "PS-ESMwPSS2"
-//Target Connections
-    @IBOutlet weak var waveform: UIView!
-    @IBOutlet weak var diagnosis1: UILabel!
-    @IBOutlet weak var diagnosis2: UILabel!
-    @IBOutlet weak var diagnosis3: UILabel!
-    @IBOutlet weak var diagnosis4: UILabel!
-    @IBOutlet weak var diagnosis5: UILabel!
-    @IBOutlet weak var diagnosis6: UILabel!
-    @IBOutlet weak var diagnosis7: UILabel!
+    var URL : NSURL!
     
+//Target Connections
+    @IBOutlet weak var diagnosis1: UILabel!
+    @IBOutlet weak var WaveformView: FDWaveformView!
+    
+    //unwind segue
+    @IBAction func unwindtoPSOutput(segue: UIStoryboardSegue){
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,12 +34,25 @@ class PulmSupineOutputViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "psout" {
         let PSVC : PulmSupineConditionViewController = segue.destinationViewController as! PulmSupineConditionViewController
         PSVC.condition = pulm
+            PSVC.URL = self.URL
+        }
         
     }
-
-
+    
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        self.WaveformView.audioURL = URL
+        self.WaveformView.progressSamples = 0
+        self.WaveformView.doesAllowScroll = true
+        self.WaveformView.doesAllowStretch = true
+        self.WaveformView.doesAllowScrubbing = false
+        self.WaveformView.wavesColor = UIColor.blueColor()
+        
+    }
     /*
     // MARK: - Navigation
 

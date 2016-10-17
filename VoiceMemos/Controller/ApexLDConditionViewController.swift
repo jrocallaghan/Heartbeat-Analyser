@@ -18,11 +18,16 @@ class ApexLDConditionViewController: UIViewController {
     var googlesite = String ()
     var mayosite = String ()
     var medlinesite = String ()
+    var URL : NSURL!
 
 //Target Connections
     @IBOutlet weak var labelname: UILabel!
     @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var WaveformView: FDWaveformView!
     @IBOutlet weak var labeldetails: UILabel!
+    //unwind segue
+    @IBAction func unwindtoALDCond(segue: UIStoryboardSegue){
+    }
     
     
     override func viewDidLoad() {
@@ -39,6 +44,16 @@ class ApexLDConditionViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         //  detailscond()
+            self.WaveformView.audioURL = URL
+            self.WaveformView.progressSamples = 0
+            self.WaveformView.doesAllowScroll = true
+            self.WaveformView.doesAllowStretch = true
+            self.WaveformView.doesAllowScrubbing = false
+            self.WaveformView.wavesColor = UIColor.darkGrayColor()
+            
+            //
+            //        signalCompare(self.supine)
+        
         labeldetails.text = details
         labelname.text = diagnosis
         

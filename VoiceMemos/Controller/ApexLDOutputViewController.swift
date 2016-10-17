@@ -11,16 +11,15 @@ import UIKit
 class ApexLDOutputViewController: UIViewController {
     
     var apexld = "ALD-S3Gallop"
+    var URL : NSURL!
     
     //Target Connections
-    @IBOutlet weak var waveform: UIView!
+    @IBOutlet weak var waveform: FDWaveformView!
     @IBOutlet weak var diagnosis1: UILabel!
-    @IBOutlet weak var diagnosis2: UILabel!
-    @IBOutlet weak var diagnosis3: UILabel!
-    @IBOutlet weak var diagnosis4: UILabel!
-    @IBOutlet weak var diagnosis5: UILabel!
-    @IBOutlet weak var diagnosis6: UILabel!
-    @IBOutlet weak var diagnosis7: UILabel!
+    
+    //unwind segue
+    @IBAction func unwindtoALDOutput(segue: UIStoryboardSegue){
+    }
     
    
     override func viewDidLoad() {
@@ -36,11 +35,25 @@ class ApexLDOutputViewController: UIViewController {
     
     //preparing data for 2nd VC
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "aldout" {
         let VC2 : ApexLDConditionViewController = segue.destinationViewController as! ApexLDConditionViewController
         VC2.condition = apexld
+        VC2.URL = self.URL
+        }
         
     }
 
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        self.waveform.audioURL = URL
+        self.waveform.progressSamples = 0
+        self.waveform.doesAllowScroll = true
+        self.waveform.doesAllowStretch = true
+        self.waveform.doesAllowScrubbing = false
+        self.waveform.wavesColor = UIColor.blueColor()
+
+    }
    
     /*
     // MARK: - Navigation
