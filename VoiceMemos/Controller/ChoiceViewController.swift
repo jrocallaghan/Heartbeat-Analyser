@@ -10,6 +10,8 @@ import UIKit
 
 class ChoiceViewController: UIViewController {
 
+    var inputURL : NSURL!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +23,35 @@ class ChoiceViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "choicetoas"{
+            let controller = segue.destinationViewController as! ApexSupineOutputViewController
+            controller.URL = self.inputURL
+        }
+        else if segue.identifier == "choicetoaos"{
+            let controller = segue.destinationViewController as! AorticSitOutputViewController
+            controller.URL = self.inputURL
+        }
+        else if segue.identifier == "choicetoald"{
+            let controller = segue.destinationViewController as! ApexLDOutputViewController
+            controller.URL = self.inputURL
+        }
+        else if segue.identifier == "choicetops"{
+            let controller = segue.destinationViewController as! PulmSupineOutputViewController
+            controller.URL = self.inputURL
+        }
+        
+    }
+    
+    //unwind segue
+    
+    @IBAction func unwindtochoice (segue: UIStoryboardSegue){
+    }
+    
+
+    
+    
+
 
     /*
     // MARK: - Navigation
@@ -33,3 +64,4 @@ class ChoiceViewController: UIViewController {
     */
 
 }
+

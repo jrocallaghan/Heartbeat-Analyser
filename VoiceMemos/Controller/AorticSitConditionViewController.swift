@@ -11,6 +11,7 @@ import UIKit
 class AorticSitConditionViewController: UIViewController {
     
 //Global variables
+    @IBOutlet weak var waveform: FDWaveformView!
     var condition = String()
     var details = String ()
     var diagnosis = String ()
@@ -18,6 +19,10 @@ class AorticSitConditionViewController: UIViewController {
     var googlesite = String ()
     var mayosite = String ()
     var medlinesite  = String ()
+    var URL : NSURL!
+    //unwind segue
+    @IBAction func unwindtoAOSCond(segue: UIStoryboardSegue){
+    }
     
 //Target Connection
     @IBOutlet weak var labelname: UILabel!
@@ -67,6 +72,12 @@ class AorticSitConditionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         detailscond()
+        self.waveform.audioURL = URL
+        self.waveform.progressSamples = 0
+        self.waveform.doesAllowScroll = true
+        self.waveform.doesAllowStretch = true
+        self.waveform.doesAllowScrubbing = false
+        self.waveform.wavesColor = UIColor.darkGrayColor()
 
         // Do any additional setup after loading the view.
     }

@@ -13,12 +13,16 @@ import Foundation
 
 class ApexSupineOutputViewController: UIViewController {
     
-    var inputURL : NSURL!
+    var URL : NSURL!
 
     ///TEST ONLY/////
     ////CHANGE AFTER////////
     var apexsup = "AS-MSC"
     var supine = ["Early Systolic Murmur", "Holosystolic Murmur","Late Systolic Murmur", "Mid-Systolic Click","Mid-Systolic Murmur","Single S1 S2","Split S1"]
+    
+    //unwind segue
+    @IBAction func unwindtoASOutput(segue: UIStoryboardSegue){
+    }
     
     //Setting up waveform view and waeform target connection
     @IBOutlet weak var WaveformView: FDWaveformView!
@@ -27,13 +31,7 @@ class ApexSupineOutputViewController: UIViewController {
     
     //Diagnosis labels target connections
     @IBOutlet weak var Diagnosis1: UILabel!
-    @IBOutlet weak var Diagnosis2: UILabel!
-    @IBOutlet weak var Diagnosis3: UILabel!
-    @IBOutlet weak var Diagnosis4: UILabel!
-    @IBOutlet weak var Diagnosis5: UILabel!
-    @IBOutlet weak var Diagnosis6: UILabel!
-    @IBOutlet weak var Diagnosis7: UILabel!
-    @IBOutlet weak var diagnosis8: UILabel!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,55 +45,52 @@ class ApexSupineOutputViewController: UIViewController {
     
         //preparing data for 2nd VC
         override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+            if segue.identifier == "asout" {
             let VC2 : ApexSupineConditionViewController = segue.destinationViewController as! ApexSupineConditionViewController
             VC2.condition = apexsup
+            VC2.URL = self.URL
+            }
     
         }
     
     override func viewDidAppear(animated: Bool) {
         
-//        self.Diagnosis1.text = ""
-//        self.Diagnosis2.text = ""
-//        self.Diagnosis3.text = ""
-//        self.Diagnosis4.text = ""
-//        self.Diagnosis5.text = ""
-//        self.Diagnosis6.text = ""
-//        self.Diagnosis7.text = ""
-//        
-//        self.WaveformView.audioURL = inputURL
-//        self.WaveformView.progressSamples = 0
-//        self.WaveformView.doesAllowScroll = true
-//        self.WaveformView.doesAllowStretch = true
-//        self.WaveformView.doesAllowScrubbing = false
-//        self.WaveformView.wavesColor = UIColor.blueColor()
+
+        
+        self.WaveformView.audioURL = URL
+        self.WaveformView.progressSamples = 0
+        self.WaveformView.doesAllowScroll = true
+        self.WaveformView.doesAllowStretch = true
+        self.WaveformView.doesAllowScrubbing = false
+        self.WaveformView.wavesColor = UIColor.blueColor()
         
 //
-        signalCompare(self.supine)
+//        signalCompare(self.supine)
     }
 //
-    func signalCompare(type: [String]){
+//    func signalCompare(type: [String]){
+////    
+//        var detective = LBAudioDetectiveNew()
+//        var bundle = NSBundle.mainBundle()
+//        var matchArray = [Float32]()
 //    
-        var detective = LBAudioDetectiveNew()
-        var bundle = NSBundle.mainBundle()
-        var matchArray = [Float32]()
-    
-        dispatch_async(dispatch_get_main_queue(), {() -> Void in
-            
-            (type as NSArray).enumerateObjectsUsingBlock({(sequenceType: Any, idx: Int, stop: UnsafeMutablePointer<ObjCBool>) -> Void in
-                
-                if let str = sequenceType as? String {
-                    
-                    var sequenceURL = bundle.URLForResource(str, withExtension: "caf")!
-                    
-                    var match: Float32 = 0.0
-                    LBAudioDetectiveCompareAudioURLs(detective, self.inputURL, sequenceURL, 0, &match)
-                    print("Match =  \(match)")
-                    matchArray.append(match) //match array holds all the percentage matches
-                }
-            })
-        })
-        LBAudioDetectiveDispose(detective)
-    }
+//        dispatch_async(dispatch_get_main_queue(), {() -> Void in
+//            
+//            (type as NSArray).enumerateObjectsUsingBlock({(sequenceType: Any, idx: Int, stop: UnsafeMutablePointer<ObjCBool>) -> Void in
+//                
+//                if let str = sequenceType as? String {
+//                    
+//                    var sequenceURL = bundle.URLForResource(str, withExtension: "caf")!
+//                    
+//                    var match: Float32 = 0.0
+//                    LBAudioDetectiveCompareAudioURLs(detective, self.inputURL, sequenceURL, 0, &match)
+//                    print("Match =  \(match)")
+//                    matchArray.append(match) //match array holds all the percentage matches
+//                }
+//            })
+//        })
+//        LBAudioDetectiveDispose(detective)
+//    }
 
 //
 //            var maxMatch = matchArray.maxElement()

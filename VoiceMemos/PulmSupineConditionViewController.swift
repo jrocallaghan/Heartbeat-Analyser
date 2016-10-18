@@ -14,6 +14,8 @@ class PulmSupineConditionViewController: UIViewController {
     var details = String ()
     var diagnosis = String ()
     var siteclicked = String ()
+    var URL : NSURL!
+    
 //Site variables
     var googlesite = String ()
     var mayosite = String()
@@ -21,9 +23,14 @@ class PulmSupineConditionViewController: UIViewController {
     
     
 //Target Connections
+    @IBOutlet weak var WaveformView: FDWaveformView!
     @IBOutlet weak var labelname: UILabel!
     @IBOutlet weak var labeldetails: UILabel!
     @IBOutlet weak var image: UIImageView!
+    
+    //unwind segue
+    @IBAction func unwindtoPSCond(segue: UIStoryboardSegue){
+    }
     
     
     @IBAction func PSweb(sender: AnyObject) {
@@ -84,6 +91,12 @@ class PulmSupineConditionViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
+        self.WaveformView.audioURL = URL
+        self.WaveformView.progressSamples = 0
+        self.WaveformView.doesAllowScroll = true
+        self.WaveformView.doesAllowStretch = true
+        self.WaveformView.doesAllowScrubbing = false
+        self.WaveformView.wavesColor = UIColor.darkGrayColor()
         labelname.text = diagnosis
         labeldetails.text = details
     }

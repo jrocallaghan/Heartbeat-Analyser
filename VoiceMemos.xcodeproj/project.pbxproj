@@ -20,6 +20,29 @@
 		A7FBD8D31DAF30C200FE24F1 /* ALDWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FBD8D21DAF30C200FE24F1 /* ALDWebViewController.swift */; };
 		A7FBD8D51DAF33DF00FE24F1 /* ASWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FBD8D41DAF33DF00FE24F1 /* ASWebViewController.swift */; };
 		A7FBD8D91DAF357300FE24F1 /* AoSWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FBD8D81DAF357300FE24F1 /* AoSWebViewController.swift */; };
+		A7FBF7911DB5D9B500767ECB /* ALD-MOSnDM.aiff in Resources */ = {isa = PBXBuildFile; fileRef = A7FBF78B1DB5D9B500767ECB /* ALD-MOSnDM.aiff */; };
+		A7FBF7921DB5D9B500767ECB /* ALD-S3Gallop.aiff in Resources */ = {isa = PBXBuildFile; fileRef = A7FBF78C1DB5D9B500767ECB /* ALD-S3Gallop.aiff */; };
+		A7FBF7931DB5D9B500767ECB /* ALD-S3nHSM.aiff in Resources */ = {isa = PBXBuildFile; fileRef = A7FBF78D1DB5D9B500767ECB /* ALD-S3nHSM.aiff */; };
+		A7FBF7941DB5D9B500767ECB /* ALD-S4Gallop.aiff in Resources */ = {isa = PBXBuildFile; fileRef = A7FBF78E1DB5D9B500767ECB /* ALD-S4Gallop.aiff */; };
+		A7FBF7951DB5D9B500767ECB /* ALD-S4nMSM.aiff in Resources */ = {isa = PBXBuildFile; fileRef = A7FBF78F1DB5D9B500767ECB /* ALD-S4nMSM.aiff */; };
+		A7FBF7961DB5D9B500767ECB /* ALD-SCwLSM.aiff in Resources */ = {isa = PBXBuildFile; fileRef = A7FBF7901DB5D9B500767ECB /* ALD-SCwLSM.aiff */; };
+		A7FBF79B1DB5D9C100767ECB /* AoS-EDM.aiff in Resources */ = {isa = PBXBuildFile; fileRef = A7FBF7971DB5D9C100767ECB /* AoS-EDM.aiff */; };
+		A7FBF79C1DB5D9C100767ECB /* AoS-Normal.aiff in Resources */ = {isa = PBXBuildFile; fileRef = A7FBF7981DB5D9C100767ECB /* AoS-Normal.aiff */; };
+		A7FBF79D1DB5D9C100767ECB /* AoS-SMwAS2.aiff in Resources */ = {isa = PBXBuildFile; fileRef = A7FBF7991DB5D9C100767ECB /* AoS-SMwAS2.aiff */; };
+		A7FBF79E1DB5D9C100767ECB /* AoS-SnDM.aiff in Resources */ = {isa = PBXBuildFile; fileRef = A7FBF79A1DB5D9C100767ECB /* AoS-SnDM.aiff */; };
+		A7FBF7A61DB5D9CC00767ECB /* AS-ESM.aiff in Resources */ = {isa = PBXBuildFile; fileRef = A7FBF79F1DB5D9CC00767ECB /* AS-ESM.aiff */; };
+		A7FBF7A71DB5D9CC00767ECB /* AS-HSM.aiff in Resources */ = {isa = PBXBuildFile; fileRef = A7FBF7A01DB5D9CC00767ECB /* AS-HSM.aiff */; };
+		A7FBF7A81DB5D9CC00767ECB /* AS-LSM.aiff in Resources */ = {isa = PBXBuildFile; fileRef = A7FBF7A11DB5D9CC00767ECB /* AS-LSM.aiff */; };
+		A7FBF7A91DB5D9CC00767ECB /* AS-MSC.aiff in Resources */ = {isa = PBXBuildFile; fileRef = A7FBF7A21DB5D9CC00767ECB /* AS-MSC.aiff */; };
+		A7FBF7AA1DB5D9CC00767ECB /* AS-MSM.aiff in Resources */ = {isa = PBXBuildFile; fileRef = A7FBF7A31DB5D9CC00767ECB /* AS-MSM.aiff */; };
+		A7FBF7AB1DB5D9CC00767ECB /* AS-Normal.aiff in Resources */ = {isa = PBXBuildFile; fileRef = A7FBF7A41DB5D9CC00767ECB /* AS-Normal.aiff */; };
+		A7FBF7AC1DB5D9CC00767ECB /* AS-SplitS1.aiff in Resources */ = {isa = PBXBuildFile; fileRef = A7FBF7A51DB5D9CC00767ECB /* AS-SplitS1.aiff */; };
+		A7FBF7B31DB5D9DD00767ECB /* PS-ESMwPSS2.aiff in Resources */ = {isa = PBXBuildFile; fileRef = A7FBF7AD1DB5D9DD00767ECB /* PS-ESMwPSS2.aiff */; };
+		A7FBF7B41DB5D9DD00767ECB /* PS-ESMwSS2.aiff in Resources */ = {isa = PBXBuildFile; fileRef = A7FBF7AE1DB5D9DD00767ECB /* PS-ESMwSS2.aiff */; };
+		A7FBF7B51DB5D9DD00767ECB /* PS-ESMwTSS2.aiff in Resources */ = {isa = PBXBuildFile; fileRef = A7FBF7AF1DB5D9DD00767ECB /* PS-ESMwTSS2.aiff */; };
+		A7FBF7B61DB5D9DD00767ECB /* PS-SingleS2.aiff in Resources */ = {isa = PBXBuildFile; fileRef = A7FBF7B01DB5D9DD00767ECB /* PS-SingleS2.aiff */; };
+		A7FBF7B71DB5D9DD00767ECB /* PS-SplitS2P.aiff in Resources */ = {isa = PBXBuildFile; fileRef = A7FBF7B11DB5D9DD00767ECB /* PS-SplitS2P.aiff */; };
+		A7FBF7B81DB5D9DD00767ECB /* PS-SplitS2T.aiff in Resources */ = {isa = PBXBuildFile; fileRef = A7FBF7B21DB5D9DD00767ECB /* PS-SplitS2T.aiff */; };
 		CD1273B51AA7EB5F00D9D393 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1273B41AA7EB5F00D9D393 /* AppDelegate.swift */; };
 		CD1273BA1AA7EB5F00D9D393 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD1273B81AA7EB5F00D9D393 /* Main.storyboard */; };
 		CD1273BC1AA7EB5F00D9D393 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD1273BB1AA7EB5F00D9D393 /* Images.xcassets */; };
@@ -100,13 +123,6 @@
 		A704C9F81DA781F7002E43D8 /* PulmSupineConditionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PulmSupineConditionViewController.swift; path = ../PulmSupineConditionViewController.swift; sourceTree = "<group>"; };
 		A77659CB1D9E726D00C2EC81 /* ChoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoiceViewController.swift; sourceTree = "<group>"; };
 		A77659CD1DA346C600C2EC81 /* ApexSupineOutputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApexSupineOutputViewController.swift; sourceTree = "<group>"; };
-		A77659CF1DA3527B00C2EC81 /* Early Systolic Murmur.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Early Systolic Murmur.caf"; sourceTree = "<group>"; };
-		A77659D01DA3527B00C2EC81 /* Holosystolic Murmur.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Holosystolic Murmur.caf"; sourceTree = "<group>"; };
-		A77659D11DA3527B00C2EC81 /* Late Systolic Murmur.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Late Systolic Murmur.caf"; sourceTree = "<group>"; };
-		A77659D21DA3527B00C2EC81 /* Mid-Systolic Click.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mid-Systolic Click.caf"; sourceTree = "<group>"; };
-		A77659D31DA3527B00C2EC81 /* Mid-Systolic Murmur.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mid-Systolic Murmur.caf"; sourceTree = "<group>"; };
-		A77659D41DA3527B00C2EC81 /* Single S1 S2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Single S1 S2.caf"; sourceTree = "<group>"; };
-		A77659D51DA3527B00C2EC81 /* Split S1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Split S1.caf"; sourceTree = "<group>"; };
 		A77659D61DA3672300C2EC81 /* ApexSupineConditionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApexSupineConditionViewController.swift; sourceTree = "<group>"; };
 		A7F8288A1DAA0B3E006D2F5A /* AorticSitOutputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AorticSitOutputViewController.swift; path = ../AorticSitOutputViewController.swift; sourceTree = "<group>"; };
 		A7F8288C1DAA0BF4006D2F5A /* PulmSupineOutputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PulmSupineOutputViewController.swift; path = ../PulmSupineOutputViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +130,29 @@
 		A7FBD8D21DAF30C200FE24F1 /* ALDWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ALDWebViewController.swift; path = ../ALDWebViewController.swift; sourceTree = "<group>"; };
 		A7FBD8D41DAF33DF00FE24F1 /* ASWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASWebViewController.swift; path = ../ASWebViewController.swift; sourceTree = "<group>"; };
 		A7FBD8D81DAF357300FE24F1 /* AoSWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AoSWebViewController.swift; path = ../AoSWebViewController.swift; sourceTree = "<group>"; };
+		A7FBF78B1DB5D9B500767ECB /* ALD-MOSnDM.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "ALD-MOSnDM.aiff"; sourceTree = "<group>"; };
+		A7FBF78C1DB5D9B500767ECB /* ALD-S3Gallop.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "ALD-S3Gallop.aiff"; sourceTree = "<group>"; };
+		A7FBF78D1DB5D9B500767ECB /* ALD-S3nHSM.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "ALD-S3nHSM.aiff"; sourceTree = "<group>"; };
+		A7FBF78E1DB5D9B500767ECB /* ALD-S4Gallop.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "ALD-S4Gallop.aiff"; sourceTree = "<group>"; };
+		A7FBF78F1DB5D9B500767ECB /* ALD-S4nMSM.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "ALD-S4nMSM.aiff"; sourceTree = "<group>"; };
+		A7FBF7901DB5D9B500767ECB /* ALD-SCwLSM.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "ALD-SCwLSM.aiff"; sourceTree = "<group>"; };
+		A7FBF7971DB5D9C100767ECB /* AoS-EDM.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "AoS-EDM.aiff"; sourceTree = "<group>"; };
+		A7FBF7981DB5D9C100767ECB /* AoS-Normal.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "AoS-Normal.aiff"; sourceTree = "<group>"; };
+		A7FBF7991DB5D9C100767ECB /* AoS-SMwAS2.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "AoS-SMwAS2.aiff"; sourceTree = "<group>"; };
+		A7FBF79A1DB5D9C100767ECB /* AoS-SnDM.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "AoS-SnDM.aiff"; sourceTree = "<group>"; };
+		A7FBF79F1DB5D9CC00767ECB /* AS-ESM.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "AS-ESM.aiff"; sourceTree = "<group>"; };
+		A7FBF7A01DB5D9CC00767ECB /* AS-HSM.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "AS-HSM.aiff"; sourceTree = "<group>"; };
+		A7FBF7A11DB5D9CC00767ECB /* AS-LSM.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "AS-LSM.aiff"; sourceTree = "<group>"; };
+		A7FBF7A21DB5D9CC00767ECB /* AS-MSC.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "AS-MSC.aiff"; sourceTree = "<group>"; };
+		A7FBF7A31DB5D9CC00767ECB /* AS-MSM.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "AS-MSM.aiff"; sourceTree = "<group>"; };
+		A7FBF7A41DB5D9CC00767ECB /* AS-Normal.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "AS-Normal.aiff"; sourceTree = "<group>"; };
+		A7FBF7A51DB5D9CC00767ECB /* AS-SplitS1.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "AS-SplitS1.aiff"; sourceTree = "<group>"; };
+		A7FBF7AD1DB5D9DD00767ECB /* PS-ESMwPSS2.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "PS-ESMwPSS2.aiff"; sourceTree = "<group>"; };
+		A7FBF7AE1DB5D9DD00767ECB /* PS-ESMwSS2.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "PS-ESMwSS2.aiff"; sourceTree = "<group>"; };
+		A7FBF7AF1DB5D9DD00767ECB /* PS-ESMwTSS2.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "PS-ESMwTSS2.aiff"; sourceTree = "<group>"; };
+		A7FBF7B01DB5D9DD00767ECB /* PS-SingleS2.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "PS-SingleS2.aiff"; sourceTree = "<group>"; };
+		A7FBF7B11DB5D9DD00767ECB /* PS-SplitS2P.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "PS-SplitS2P.aiff"; sourceTree = "<group>"; };
+		A7FBF7B21DB5D9DD00767ECB /* PS-SplitS2T.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "PS-SplitS2T.aiff"; sourceTree = "<group>"; };
 		CD1273AF1AA7EB5F00D9D393 /* VoiceMemos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceMemos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD1273B31AA7EB5F00D9D393 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD1273B41AA7EB5F00D9D393 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -204,15 +243,52 @@
 		A77659C81D9E235900C2EC81 /* Apex Supine */ = {
 			isa = PBXGroup;
 			children = (
-				A77659CF1DA3527B00C2EC81 /* Early Systolic Murmur.caf */,
-				A77659D01DA3527B00C2EC81 /* Holosystolic Murmur.caf */,
-				A77659D11DA3527B00C2EC81 /* Late Systolic Murmur.caf */,
-				A77659D21DA3527B00C2EC81 /* Mid-Systolic Click.caf */,
-				A77659D31DA3527B00C2EC81 /* Mid-Systolic Murmur.caf */,
-				A77659D41DA3527B00C2EC81 /* Single S1 S2.caf */,
-				A77659D51DA3527B00C2EC81 /* Split S1.caf */,
+				A7FBF79F1DB5D9CC00767ECB /* AS-ESM.aiff */,
+				A7FBF7A01DB5D9CC00767ECB /* AS-HSM.aiff */,
+				A7FBF7A11DB5D9CC00767ECB /* AS-LSM.aiff */,
+				A7FBF7A21DB5D9CC00767ECB /* AS-MSC.aiff */,
+				A7FBF7A31DB5D9CC00767ECB /* AS-MSM.aiff */,
+				A7FBF7A41DB5D9CC00767ECB /* AS-Normal.aiff */,
+				A7FBF7A51DB5D9CC00767ECB /* AS-SplitS1.aiff */,
 			);
 			name = "Apex Supine";
+			sourceTree = "<group>";
+		};
+		A7D702CD1DB4BD8700DA88FD /* Aortic Sitting */ = {
+			isa = PBXGroup;
+			children = (
+				A7FBF7971DB5D9C100767ECB /* AoS-EDM.aiff */,
+				A7FBF7981DB5D9C100767ECB /* AoS-Normal.aiff */,
+				A7FBF7991DB5D9C100767ECB /* AoS-SMwAS2.aiff */,
+				A7FBF79A1DB5D9C100767ECB /* AoS-SnDM.aiff */,
+			);
+			name = "Aortic Sitting";
+			sourceTree = "<group>";
+		};
+		A7D702CE1DB4BD9900DA88FD /* ALD */ = {
+			isa = PBXGroup;
+			children = (
+				A7FBF78B1DB5D9B500767ECB /* ALD-MOSnDM.aiff */,
+				A7FBF78C1DB5D9B500767ECB /* ALD-S3Gallop.aiff */,
+				A7FBF78D1DB5D9B500767ECB /* ALD-S3nHSM.aiff */,
+				A7FBF78E1DB5D9B500767ECB /* ALD-S4Gallop.aiff */,
+				A7FBF78F1DB5D9B500767ECB /* ALD-S4nMSM.aiff */,
+				A7FBF7901DB5D9B500767ECB /* ALD-SCwLSM.aiff */,
+			);
+			name = ALD;
+			sourceTree = "<group>";
+		};
+		A7D702CF1DB4BDA100DA88FD /* Pulm Sup */ = {
+			isa = PBXGroup;
+			children = (
+				A7FBF7AD1DB5D9DD00767ECB /* PS-ESMwPSS2.aiff */,
+				A7FBF7AE1DB5D9DD00767ECB /* PS-ESMwSS2.aiff */,
+				A7FBF7AF1DB5D9DD00767ECB /* PS-ESMwTSS2.aiff */,
+				A7FBF7B01DB5D9DD00767ECB /* PS-SingleS2.aiff */,
+				A7FBF7B11DB5D9DD00767ECB /* PS-SplitS2P.aiff */,
+				A7FBF7B21DB5D9DD00767ECB /* PS-SplitS2T.aiff */,
+			);
+			name = "Pulm Sup";
 			sourceTree = "<group>";
 		};
 		C7C8773CC697D8CB86499AED /* Frameworks */ = {
@@ -374,6 +450,9 @@
 		CF0174071D7D61DE007217AB /* heartbeats */ = {
 			isa = PBXGroup;
 			children = (
+				A7D702CF1DB4BDA100DA88FD /* Pulm Sup */,
+				A7D702CE1DB4BD9900DA88FD /* ALD */,
+				A7D702CD1DB4BD8700DA88FD /* Aortic Sitting */,
 				A77659C81D9E235900C2EC81 /* Apex Supine */,
 			);
 			path = heartbeats;
@@ -460,7 +539,7 @@
 				TargetAttributes = {
 					CD1273AE1AA7EB5F00D9D393 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = 97K2TH9YMT;
+						DevelopmentTeam = GCE8TBSYNC;
 					};
 					CD1273C31AA7EB5F00D9D393 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -492,12 +571,35 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7FBF7951DB5D9B500767ECB /* ALD-S4nMSM.aiff in Resources */,
+				A7FBF7B71DB5D9DD00767ECB /* PS-SplitS2P.aiff in Resources */,
+				A7FBF7931DB5D9B500767ECB /* ALD-S3nHSM.aiff in Resources */,
+				A7FBF7921DB5D9B500767ECB /* ALD-S3Gallop.aiff in Resources */,
+				A7FBF7B61DB5D9DD00767ECB /* PS-SingleS2.aiff in Resources */,
+				A7FBF79E1DB5D9C100767ECB /* AoS-SnDM.aiff in Resources */,
 				CD1273ED1AA7EBE300D9D393 /* VoiceTableViewCell.xib in Resources */,
+				A7FBF7AC1DB5D9CC00767ECB /* AS-SplitS1.aiff in Resources */,
+				A7FBF79C1DB5D9C100767ECB /* AoS-Normal.aiff in Resources */,
+				A7FBF7911DB5D9B500767ECB /* ALD-MOSnDM.aiff in Resources */,
+				A7FBF7B31DB5D9DD00767ECB /* PS-ESMwPSS2.aiff in Resources */,
 				CD1273BA1AA7EB5F00D9D393 /* Main.storyboard in Resources */,
+				A7FBF7941DB5D9B500767ECB /* ALD-S4Gallop.aiff in Resources */,
+				A7FBF7A81DB5D9CC00767ECB /* AS-LSM.aiff in Resources */,
+				A7FBF7B81DB5D9DD00767ECB /* PS-SplitS2T.aiff in Resources */,
+				A7FBF7AB1DB5D9CC00767ECB /* AS-Normal.aiff in Resources */,
 				CD1273BF1AA7EB5F00D9D393 /* LaunchScreen.xib in Resources */,
+				A7FBF7A91DB5D9CC00767ECB /* AS-MSC.aiff in Resources */,
 				CF8682711D65D214000FC9F6 /* normal.mp3 in Resources */,
+				A7FBF7B51DB5D9DD00767ECB /* PS-ESMwTSS2.aiff in Resources */,
 				CD1273BC1AA7EB5F00D9D393 /* Images.xcassets in Resources */,
+				A7FBF7A61DB5D9CC00767ECB /* AS-ESM.aiff in Resources */,
+				A7FBF7B41DB5D9DD00767ECB /* PS-ESMwSS2.aiff in Resources */,
+				A7FBF7961DB5D9B500767ECB /* ALD-SCwLSM.aiff in Resources */,
+				A7FBF7AA1DB5D9CC00767ECB /* AS-MSM.aiff in Resources */,
 				CF8682701D65D214000FC9F6 /* innocent.mp3 in Resources */,
+				A7FBF79D1DB5D9C100767ECB /* AoS-SMwAS2.aiff in Resources */,
+				A7FBF7A71DB5D9CC00767ECB /* AS-HSM.aiff in Resources */,
+				A7FBF79B1DB5D9C100767ECB /* AoS-EDM.aiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -740,7 +842,7 @@
 				INFOPLIST_FILE = VoiceMemos/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = JordanHeartbeatAppTest;
+				PRODUCT_BUNDLE_IDENTIFIER = MonashUniversity;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/VoiceMemos/VoiceMemos-Bridging-Header.h";
@@ -763,7 +865,7 @@
 				INFOPLIST_FILE = VoiceMemos/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = JordanHeartbeatAppTest;
+				PRODUCT_BUNDLE_IDENTIFIER = MonashUniversity;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/VoiceMemos/VoiceMemos-Bridging-Header.h";

@@ -26,6 +26,12 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var testButton: UIButton!
     @IBOutlet weak var filterButton: UIButton!
     
+    func dismiss() {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
+    
     var filterState = 0
     var filterURL: NSURL!
     var initURL: NSURL!
@@ -422,8 +428,9 @@ class DetailViewController: UIViewController {
       
         
         
-        if segue.identifier == "apexsepoutput" {
-            let apexsepoutputVC = segue.destinationViewController as! ApexSupineOutputViewController
+        if segue.identifier == "choice" {
+            let navVC = segue.destinationViewController as! UINavigationController
+            let choiceVC = navVC.topViewController as! ChoiceViewController
             let url: NSURL = {
                 if self.recordingHasUpdates {
                     if filterState == 0 { return self.tmpStoreURL }
@@ -434,7 +441,7 @@ class DetailViewController: UIViewController {
                 }
             }()
         
-            apexsepoutputVC.inputURL = url
+           choiceVC.inputURL = url
         }
     }
     
@@ -663,6 +670,29 @@ class AudioTableViewCell: UITableViewCell {
     @IBOutlet weak var progressSlider: UISlider!
 }
 
+////ADDED BY STEPH
+//protocol DismissalDelegate : class
+//{
+//    func finishedShowing(viewController: UIViewController);
+//}
+//
+//protocol Dismissable : class
+//{
+//    weak var dismissalDelegate : DismissalDelegate? { get set }
+//}
+//
+//extension DismissalDelegate where Self: UIViewController
+//{
+//    func finishedShowing(viewController: UIViewController) {
+//        if viewController.isBeingPresented() && viewController.presentingViewController == self
+//        {
+//            self.dismissViewControllerAnimated(true, completion: nil)
+//            return
+//        }
+//        
+//        self.navigationController?.popViewControllerAnimated(true)
+//    }
+//}
 
 
 
