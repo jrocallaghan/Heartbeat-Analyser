@@ -10,8 +10,9 @@ import UIKit
 
 class AorticSitOutputViewController: UIViewController {
 
-    var aorticsit = "sss"
+    var aorticsit = "darkness"
     var URL : NSURL!
+    var aortic = ["AoS-EDM","AoS-Normal","AoS-SMwAS2","AoS-SnDM"]
     
     //Target Connections
     
@@ -54,6 +55,38 @@ class AorticSitOutputViewController: UIViewController {
         self.WaveformView.doesAllowStretch = true
         self.WaveformView.doesAllowScrubbing = false
         self.WaveformView.wavesColor = UIColor.blueColor()
+        
+        signalCompare(aortic)
+        
+    }
+    
+    func signalCompare(type: [String]){
+        
+        
+        let bundle = NSBundle.mainBundle()
+        var matchArray = [Float]()
+        
+        var match: Float = 0.0
+        for name in type {
+            let sequenceURL = bundle.URLForResource(name, withExtension: "aiff")!
+            match = compareFingerprint(self.URL, sequenceURL)
+            print("Match =  \(match)")
+            matchArray.append(match)
+        }
+        
+        
+        let maxMatch = matchArray.maxElement()  //this is the max match
+        let maxLocationIndex = matchArray.indexOf(maxMatch!) //this is the index of the max match if you want to use it for something
+        //var maxLocationInt = matchArray.startIndex.distanceTo(maxLocationIndex!)   //this is the index cast as an int if you need to use it
+        
+        if (maxMatch<0.6) {
+            self.diagnosis1.text = "Error have occured. Please re-record the audio file."
+        }
+        else{
+            self.diagnosis1.text = type[maxLocationIndex!]
+            self.aorticsit = type[maxLocationIndex!]
+        }
+        
         
     }
     /*
