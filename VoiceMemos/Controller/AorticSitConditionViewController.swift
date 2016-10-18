@@ -72,6 +72,7 @@ class AorticSitConditionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         detailscond()
+        
         self.waveform.audioURL = URL
         self.waveform.progressSamples = 0
         self.waveform.doesAllowScroll = true

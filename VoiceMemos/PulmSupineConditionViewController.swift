@@ -102,7 +102,7 @@ class PulmSupineConditionViewController: UIViewController {
     }
     
     func detailscond(){
-        if details == "PS-ESMwPSS2"{
+        if condition == "PS-ESMwPSS2"{
 //referenced from http://www.mayoclinic.org/diseases-conditions/atrial-septal-defect/basics/symptoms/con-20027034
             self.image.image = UIImage(named:"PS-ESMwPSS2")
             diagnosis = "Arterial Septal Defect"
@@ -113,7 +113,7 @@ class PulmSupineConditionViewController: UIViewController {
             
         }
 //referenced from http://www.mayoclinic.org/diseases-conditions/pulmonary-valve-stenosis/basics/symptoms/con-20013659
-        else if details == "PS-ESMwSS2"{
+        else if condition == "PS-ESMwSS2"{
             self.image.image = UIImage(named:"PS-ESMwSS2")
             diagnosis = "Pulmonary Valve Stenosis"
             details = "Pulmonary valve stenosis is a condition in which a deformity on or near your pulmonary valve, the valve that influences the blood flow from your heart to your lungs, slows the blood flow. Adults occasionally have the condition as a complication of another illness, but mostly, pulmonary valve stenosis develops before birth as a congenital heart defect."+"\n"+"The symptoms vary, depending on the extent of the obstruction.Those with more significant stenosis often first notice symptoms while exercising"+"\n\n"+"Symptoms are:"+"\n"+"1. Shortness of breath, especially during exertion"+"\n"+"2. Chest pain"+"\n"+"3. Loss of consciousness"+"\n"+"4. Fatigue"
@@ -121,7 +121,7 @@ class PulmSupineConditionViewController: UIViewController {
             mayosite = "http://www.mayoclinic.org/diseases-conditions/pulmonary-valve-stenosis/basics/definition/con-20013659"
             medlinesite = "http://www.mayoclinic.org/diseases-conditions/pulmonary-valve-stenosis/basics/definition/con-20013659"
         }
-        else if details == "PS-ESMwTSS2"{
+        else if condition == "PS-ESMwTSS2"{
 //referenced from http://www.heart.org/HEARTORG/Conditions/More/HeartValveProblemsandDisease/Innocent-Heart-Murmur_UCM_450621_Article.jsp#.V_kR0GVKCAY
             self.image.image = UIImage(named:"PS-ESMwTSS2")
             diagnosis = "Innocent Murmur"
@@ -130,7 +130,7 @@ class PulmSupineConditionViewController: UIViewController {
             mayosite = "http://www.mayoclinic.org/diseases-conditions/heart-murmurs/basics/causes/con-20028706"
             medlinesite = "https://medlineplus.gov/ency/article/003266.htm"
         }
-        else if details == "PS-SingleS2"{
+        else if condition == "PS-SingleS2"{
             self.image.image = UIImage(named:"PS-SingleS2")
             diagnosis = "Heart Sound of Single S2: Normal in Elderly"
             details = "These is normal among elderly. This is not a sign of heart problem or heart disease. But further test should be runned to elimate the possibility of heart problem or heart diseases. However, patients with obesity, emphysema, pericardial fluid, the pulmonic valve closure(P2) may be too hard to hear causing a single (A2) heart sound."+"\n\n"+"NOTE: Further test should be run on the patient to further classify possible heart risk."
@@ -139,7 +139,7 @@ class PulmSupineConditionViewController: UIViewController {
             medlinesite = "http://medlineplus.gov"
             
         }
-        else if details == "PS-SplitS2P"{
+        else if condition == "PS-SplitS2P"{
 //referenced from http://www.mayoclinic.org/diseases-conditions/bundle-branch-block/basics/symptoms/con-20027273
             self.image.image = UIImage(named:"PS-SplitS2P")
             diagnosis = "Complete Right Bundle Branch Block"
@@ -148,7 +148,7 @@ class PulmSupineConditionViewController: UIViewController {
             mayosite = "http://www.mayoclinic.org/diseases-conditions/bundle-branch-block/basics/definition/con-20027273"
             medlinesite = "http://emedicine.medscape.com/article/894927-differential"
         }
-        else if details == "PS-SplitS2T"{
+        else if condition == "PS-SplitS2T"{
             self.image.image = UIImage(named:"PS-SplitS2T")
             diagnosis = "Normal"
              details = "This person has a normal heartsound. No heart issues found."

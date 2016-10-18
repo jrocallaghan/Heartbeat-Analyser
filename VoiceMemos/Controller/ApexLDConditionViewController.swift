@@ -51,9 +51,6 @@ class ApexLDConditionViewController: UIViewController {
             self.WaveformView.doesAllowScrubbing = false
             self.WaveformView.wavesColor = UIColor.darkGrayColor()
             
-            //
-            //        signalCompare(self.supine)
-        
         labeldetails.text = details
         labelname.text = diagnosis
         

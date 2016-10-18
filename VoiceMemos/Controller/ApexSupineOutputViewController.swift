@@ -72,31 +72,29 @@ class ApexSupineOutputViewController: UIViewController {
     func signalCompare(type: [String]){
     
         
-        var bundle = NSBundle.mainBundle()
+        let bundle = NSBundle.mainBundle()
         var matchArray = [Float]()
 
         var match: Float = 0.0
         for name in type {
-            var sequenceURL = bundle.URLForResource(name, withExtension: "aiff")!
+            let sequenceURL = bundle.URLForResource(name, withExtension: "aiff")!
             match = compareFingerprint(self.URL, sequenceURL)
             print("Match =  \(match)")
             matchArray.append(match)
         }
         
         
-        var maxMatch = matchArray.maxElement()  //this is the max match
-        var maxLocationIndex = matchArray.indexOf(maxMatch!) //this is the index of the max match if you want to use it for something
+        let maxMatch = matchArray.maxElement()  //this is the max match
+        let maxLocationIndex = matchArray.indexOf(maxMatch!) //this is the index of the max match if you want to use it for something
         //var maxLocationInt = matchArray.startIndex.distanceTo(maxLocationIndex!)   //this is the index cast as an int if you need to use it
         
-        
-        if (maxMatch<0.4) {
-            self.Diagnosis1 = "error no good match found"
+        if (maxMatch<0.6) {
+            self.Diagnosis1.text = "Error have occured. Please re-record the audio file."
         }
         else{
-            self.Diagnosis1 = "maxmatch"
+            self.Diagnosis1.text = type[maxLocationIndex!]
+            apexsup = type[maxLocationIndex!]
         }
-        self.apexsup = type[maxLocationIndex!]
-        
         
         
     }
