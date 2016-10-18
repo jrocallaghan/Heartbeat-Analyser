@@ -137,9 +137,9 @@ class RecordViewController: UIViewController {
                 debugPrint("Recording permission has been granted")
                 let recordSettings: [String : AnyObject]  = [
                     AVFormatIDKey : NSNumber(unsignedInt: kAudioFormatLinearPCM),
-                    AVSampleRateKey : 44100.0,
-                    AVNumberOfChannelsKey : 2,
-                    AVLinearPCMBitDepthKey : 16,
+                    AVSampleRateKey : 5512.0, //44100.0,
+                    AVNumberOfChannelsKey : 1,
+                    AVLinearPCMBitDepthKey : 8,
                     AVLinearPCMIsBigEndianKey : false,
                     AVLinearPCMIsFloatKey : false,
                 ]

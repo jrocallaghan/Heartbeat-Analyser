@@ -6,7 +6,7 @@
 //  Copyright © 2016 Zhouqi Mo. All rights reserved.
 
 #import "lowPassFilter.h"
-
+#define kSamplingRate 5512.0
 #define kNumChannels 1
 
 NSURL* lowPassFilter(NSURL* inFileURL) {
@@ -22,7 +22,7 @@ NSURL* lowPassFilter(NSURL* inFileURL) {
     
      // Specify the PCM format
      
-     inputFormat.mSampleRate        = 8000.0;
+     inputFormat.mSampleRate        = kSamplingRate;
      inputFormat.mFormatID          = kAudioFormatLinearPCM;
      inputFormat.mFormatFlags       = kLinearPCMFormatFlagIsFloat;
      inputFormat.mChannelsPerFrame  = 1;
@@ -99,7 +99,7 @@ NSURL* lowPassFilter(NSURL* inFileURL) {
     
     float Fc = 2000.0;
     float Q = 1/sqrt(2);
-    float samplingRate = 8000.0;
+    float samplingRate = kSamplingRate;
     
     float omega = 2*M_PI*Fc/samplingRate;
     float omegaS = sin(omega);
@@ -148,7 +148,7 @@ NSURL* lowPassFilter(NSURL* inFileURL) {
     NSURL* destURL = [NSURL fileURLWithPath:destPath];
     
     EAFWrite *writer = [[EAFWrite alloc] init];
-    [writer openFileForWrite:destURL sr:8000.0 channels:1 wordLength:32 type:kAudioFileCAFType];
+    [writer openFileForWrite:destURL sr:kSamplingRate channels:1 wordLength:32 type:kAudioFileCAFType];
     [writer writeFloats:j fromArray:outputData];
     
     free(outputBuffer);
