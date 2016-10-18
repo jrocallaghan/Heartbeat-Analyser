@@ -14,6 +14,7 @@
 #import "waveformViewController.h"
 #import "lowPassFilter.h"
 #import "signalCompare.h"
+#import "compareFingerprint.h"
 
 
 #endif /* VoiceMemos_Bridging_Header_h */

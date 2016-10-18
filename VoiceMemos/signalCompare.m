@@ -12,7 +12,7 @@
 
 #define kSamplingRate 5512.0
 #define kNumChannels 1
-OSStatus audioFingerprint(NSURL* inFileURL) {
+void audioFingerprint(NSURL* inFileURL, BOOL fingerprintArray[][128*32*2]) {
 
 
     
@@ -110,7 +110,7 @@ OSStatus audioFingerprint(NSURL* inFileURL) {
     int fftFrameSize = 2048;    //371ms frame at 5512 hz sample rate
     int fftFrameSpace = 64;     //11.6ms frame space at 5512 hz sample rate (overlap of each frame)
     
-    int numFrames = ceil(((j - fftFrameSize)/fftFrameSpace)+1);
+    int numFrames = ceil((((float)j - (float)fftFrameSize)/(float)fftFrameSpace)+1);
     
     float **specMatrix;   //dynamically allocates the 2D spectrogram matrix;
     specMatrix = (float **)malloc(sizeof(float *)*numFrames);
@@ -129,18 +129,9 @@ OSStatus audioFingerprint(NSURL* inFileURL) {
     float outReal[fftFrameSize/2];
     float outImaginary[fftFrameSize/2];
     
-    /*printf("\n\ntest 1\n");
-    for (int i=0; i<1024; i++) {
-        printf("\n%i       %f",i,outReal[i]);
-    }*/
-    
     COMPLEX_SPLIT out = { .realp = outReal, .imagp = outImaginary };
 
-
-    //float *tempFrame = (float *)malloc(sizeof(float) * fftFrameSize);
     float tempFrame[fftFrameSize];
-    
-
     
     
     for (int i=0; i<numFrames; i++) {
@@ -148,7 +139,7 @@ OSStatus audioFingerprint(NSURL* inFileURL) {
         
         for (int p=0; p<fftFrameSize; p++) {
             tempFrame[p] = floatDataArray[(fftFrameSpace*i)+p];
-            //printf("\n%i    out: %f     temp: %f",p,outputData[p], tempFrame[p]);
+            //printf("\n%i    out: %f     temp: %f",p,floatDataArray[p], tempFrame[p]);
         }
         
         
@@ -164,6 +155,8 @@ OSStatus audioFingerprint(NSURL* inFileURL) {
         }
              
     }
+    
+    
     
     // We now have specMatrix that looks like this:
     // Time 1: [    FFT    ]  where FFT is the FFT frame holding all the frequencies magnitudes
@@ -220,19 +213,6 @@ OSStatus audioFingerprint(NSURL* inFileURL) {
     
     /////////////////PERFORM WAVELET TRANSFORM ON ARRAY//////////////////////
 
-    //how big will the fingerprint array need to be?
-    int fingerprintArraySize=0;
-    for (int i=0; i<floor(numFrames/128); i++) {
-        fingerprintArraySize++;
-    }
-    if (fingerprintArraySize == 0){ //make sure we have enough data for a single fingerprint
-        printf("not enough data, record for more than 1.5 seconds!");
-        return 0; //exit the function if we dont have a enough fingerprint
-    }
-
-    //Create the 2D boolean fingerprint array holding each subfingerprint
-    
-    BOOL fingerprintArray[fingerprintArraySize][128*32*2];
     BOOL fingerprint[128*32*2]; //temp fingerprint to be put in the main fingerprint array
     
     float imageBlock[128][32];
@@ -277,38 +257,24 @@ OSStatus audioFingerprint(NSURL* inFileURL) {
         for (int j=0; j<(128*32*2); j++) {
             fingerprintArray[i][j]= fingerprint[j];
         }
-        
     }
     
+
     //we now have the fingerprint array
     //[fingerprint 1]
     //[fingerprint 2]
     //[fingerprint 3]
     //      etc
-    
-    
-    for (int i=0; i<fingerprintArraySize;i++) {
-        for (int j=0; j<(128*32*2); j++) {
-            printf("%i ",fingerprintArray[0][j]);
-        }
-        printf("\n\n\n");
-    }
 
-
-    //make sure the small smec was initialised!!!
-    ///
-    //
-    //
-    //
-    //
-    
-    
-
-    
-    
-    printf("\ndone");
-    return 0;
-    
+    //FREE THE MEMORY
+    free(outputBuffer);
+    free(floatDataArray);
+    for (int i=0;i<numFrames; i++){ free(specMatrix[i]); }
+    free(specMatrix);
+    for (int i=0;i<numFrames; i++){ free(smallSpec[i]); }
+    free(smallSpec);
+    ExtAudioFileDispose(fileRef);
+    vDSP_destroy_fftsetup(fftSetup);
 }
 
 
@@ -335,7 +301,7 @@ void harrWavelet(float array[], int length) {
 }
 
 
-void fingerprintGet(float image[128][32], BOOL* fingerprint){
+void fingerprintGet(float image[128][32], BOOL fingerprint[]){
     
     int numRows=128;
     int numCols=32;
@@ -345,15 +311,25 @@ void fingerprintGet(float image[128][32], BOOL* fingerprint){
     //create array holding all the image elements in 1 row and its indexes in the other row
     int index=0;
     for (int row =0; row<numRows; row++) {
-        for (int col =0; row<numRows; row++) {
-            array[0][row*numCols+col] = image[row][col];
-            array[1][row*numCols+col] = index;
+        for (int col =0; col<numCols; col++) {
+            array[0][index] = image[row][col];
+            array[1][index] = index;
+            //printf("\n%i",index);
             index++;
         }
     }
     //sort the array by magnitude and hold the index
-    quickSort(array, 0, 128*32-1);
+    /*for (int i=0; i<200; i++) {
+        printf("%f  ",array[0][i]);
+    }*/
     
+    //printf("\n\n\n");
+    
+    quickSort(array, 0, 128*32-1);
+
+    /*for (int i=0; i<200; i++) {
+        printf("%f  ",array[0][i]);
+    }*/
     //first we need to extract top 200 wavelets
     
     for (int i=0; i<200; i++) {
@@ -365,7 +341,10 @@ void fingerprintGet(float image[128][32], BOOL* fingerprint){
         }
         
     }
-
+    
+    
+    
+    
 }
 
 
