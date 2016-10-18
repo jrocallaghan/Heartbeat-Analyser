@@ -12,7 +12,7 @@
 #include "LBAudioDetective.h"
 #include "LBAudioDetectiveFrame.h"
 
-void compareFingerprint(NSURL* inFileURL1, NSURL* inFileURL2);
+float compareFingerprint(NSURL* inFileURL1, NSURL* inFileURL2);
 int getFingerprintLength(NSURL* inFileURL);
 float compareSubfingerprint(BOOL subfingerprint1[], BOOL subfingerprint2[]);
 #endif /* compareFingerprint_h */

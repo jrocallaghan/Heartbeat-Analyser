@@ -13,12 +13,12 @@
 #define kNumChannels 1
 
 
-void compareFingerprint(NSURL* inFileURL1, NSURL* inFileURL2) {
+float compareFingerprint(NSURL* inFileURL1, NSURL* inFileURL2) {
 
     int length1 = getFingerprintLength(inFileURL1);
     if (length1 == 0){ //make sure we have enough data for a single fingerprint
         printf("not enough data, record for more than 1.5 seconds!");
-        return; //exit the function if we dont have a enough fingerprint
+        return 0.0; //exit the function if we dont have a enough fingerprint
     }
     BOOL fingerprintArray1[length1][128*32*2];
     audioFingerprint(inFileURL1, fingerprintArray1);
@@ -28,7 +28,7 @@ void compareFingerprint(NSURL* inFileURL1, NSURL* inFileURL2) {
     int length2 = getFingerprintLength(inFileURL2);
     if (length2 == 0){ //make sure we have enough data for a single fingerprint
         printf("not enough data, record for more than 1.5 seconds!");
-        return; //exit the function if we dont have a enough fingerprint
+        return 0.0; //exit the function if we dont have a enough fingerprint
     }
     BOOL fingerprintArray2[length2][128*32*2];
     audioFingerprint(inFileURL2, fingerprintArray2);
@@ -46,6 +46,7 @@ void compareFingerprint(NSURL* inFileURL1, NSURL* inFileURL2) {
                 matchSum += currentMatch;
             }
             match = MAX(match, matchSum/(float)length2);
+            offset++;
         }
     }
     else if (length1<length2) { //array 1 is smaller, slide it along array 2
@@ -56,6 +57,7 @@ void compareFingerprint(NSURL* inFileURL1, NSURL* inFileURL2) {
                 matchSum += currentMatch;
             }
             match = MAX(match, matchSum/(float)length1);
+            offset++;
         }
     }
     else if (length1==length2) { //array 1 and 2 are same size
@@ -67,24 +69,10 @@ void compareFingerprint(NSURL* inFileURL1, NSURL* inFileURL2) {
     }
     
     
+    //printf("\nMatch: %f",match);
+
     
-    printf("\nMatch: %f",match);
-    
-    //printf("\nlength: %i   %i\n\n",length1,length2);
-    
-    
-    
-    
-    /*
-    
-    for (int i=0; i<length1;i++) {
-        for (int j=0; j<(200); j++) {
-            printf("\n%i  %i",fingerprintArray1[i][j],fingerprintArray1[i][j]);
-        }
-        printf("\n\n\n");
-    }
-    */
-    
+    return match;
 }
 
 float compareSubfingerprint(BOOL subfingerprint1[], BOOL subfingerprint2[]) {

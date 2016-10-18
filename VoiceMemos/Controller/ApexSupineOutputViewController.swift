@@ -17,8 +17,10 @@ class ApexSupineOutputViewController: UIViewController {
 
     ///TEST ONLY/////
     ////CHANGE AFTER////////
-    var apexsup = "AS-MSC"
-    var supine = ["Early Systolic Murmur", "Holosystolic Murmur","Late Systolic Murmur", "Mid-Systolic Click","Mid-Systolic Murmur","Single S1 S2","Split S1"]
+    var apexsup = "nothing"
+    var supine = ["AS-ESM", "AS-HSM","AS-LSM", "AS-MSC","AS-MSM","AS-Normal","AS-SplitS1"]
+    //var supine = ["AS-SplitS1"]
+    
     
     //unwind segue
     @IBAction func unwindtoASOutput(segue: UIStoryboardSegue){
@@ -55,7 +57,7 @@ class ApexSupineOutputViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         
-
+        
         
         self.WaveformView.audioURL = URL
         self.WaveformView.progressSamples = 0
@@ -64,81 +66,86 @@ class ApexSupineOutputViewController: UIViewController {
         self.WaveformView.doesAllowScrubbing = false
         self.WaveformView.wavesColor = UIColor.blueColor()
         
-//
-//        signalCompare(self.supine)
+       signalCompare(self.supine)
     }
-//
-//    func signalCompare(type: [String]){
-////    
-//        var detective = LBAudioDetectiveNew()
-//        var bundle = NSBundle.mainBundle()
-//        var matchArray = [Float32]()
-//    
-//        dispatch_async(dispatch_get_main_queue(), {() -> Void in
-//            
-//            (type as NSArray).enumerateObjectsUsingBlock({(sequenceType: Any, idx: Int, stop: UnsafeMutablePointer<ObjCBool>) -> Void in
-//                
-//                if let str = sequenceType as? String {
-//                    
-//                    var sequenceURL = bundle.URLForResource(str, withExtension: "caf")!
-//                    
-//                    var match: Float32 = 0.0
-//                    LBAudioDetectiveCompareAudioURLs(detective, self.inputURL, sequenceURL, 0, &match)
-//                    print("Match =  \(match)")
-//                    matchArray.append(match) //match array holds all the percentage matches
-//                }
-//            })
-//        })
-//        LBAudioDetectiveDispose(detective)
-//    }
 
-//
-//            var maxMatch = matchArray.maxElement()
-//            var maxLocationIndex = matchArray.indexOf(maxMatch!)
-//            var maxLocationInt = matchArray.startIndex.distanceTo(maxLocationIndex!)
-//            var typeSize = type.count
-//            
-//            
-//            self.Diagnosis1.text = type[0] + ": \(matchArray[0])"
-//            self.Diagnosis2.text = type[1] + ": \(matchArray[1])"
-//            self.Diagnosis3.text = type[2] + ": \(matchArray[2])"
-//            self.Diagnosis4.text = type[3] + ": \(matchArray[3])"
-//            if (typeSize>4){
-//                self.Diagnosis5.text = type[4] + ": \(matchArray[4])"
-//                self.Diagnosis6.text = type[5] + ": \(matchArray[5])"
-//                if (typeSize>6){                                            // These if statements make sure the data shows properly since we have
-//                    self.Diagnosis7.text = type[6] + ": \(matchArray[6])"   //different amounts of audio files for each category
-//                    
-//                }
-//            }
-//            self.apexsup = type[maxLocationIndex!]
-//            
-//            switch maxLocationInt {
-//            case 0:
-//                self.Diagnosis1.textColor = UIColor.redColor()
-//            case 1:
-//                self.Diagnosis2.textColor = UIColor.redColor()
-//            case 2:
-//                self.Diagnosis3.textColor = UIColor.redColor()
-//            case 3:
-//                self.Diagnosis4.textColor = UIColor.redColor()
-//            case 4:
-//                self.Diagnosis5.textColor = UIColor.redColor()
-//            case 5:
-//                self.Diagnosis6.textColor = UIColor.redColor()
-//            case 6:
-//                self.Diagnosis7.textColor = UIColor.redColor()
-//            default:
-//                print("error has occurred changing text colour") //This probably wont happen
-//            }
-//            
-//            //let diagnosisAlert = UIAlertController(title: "Diagnosis", message: "\(type[maxLocation!])", preferredStyle: .Alert)
-//            //let okButton = UIAlertAction(title: "OK", style: .Default){(diagnosisAlert: UIAlertAction!)->Void in }
-//            //diagnosisAlert.addAction(okButton)
-//            //self.presentViewController(diagnosisAlert, animated: true, completion: nil)
-//
-//        })
+    func signalCompare(type: [String]){
+    
+        
+        var bundle = NSBundle.mainBundle()
+        var matchArray = [Float]()
 
+        var match: Float = 0.0
+        for name in type {
+            var sequenceURL = bundle.URLForResource(name, withExtension: "aiff")!
+            match = compareFingerprint(self.URL, sequenceURL)
+            print("Match =  \(match)")
+            matchArray.append(match)
+        }
+        
+        
+        var maxMatch = matchArray.maxElement()  //this is the max match
+        var maxLocationIndex = matchArray.indexOf(maxMatch!) //this is the index of the max match if you want to use it for something
+        //var maxLocationInt = matchArray.startIndex.distanceTo(maxLocationIndex!)   //this is the index cast as an int if you need to use it
+        
+        
+        if (maxMatch<0.4) {
+            self.Diagnosis1 = "error no good match found"
+        }
+        else{
+            self.Diagnosis1 = "maxmatch"
+        }
+        self.apexsup = type[maxLocationIndex!]
+        
+        
+        
+    }
 
 }
 
+            
+  /*
+            
+            self.Diagnosis1.text = type[0] + ": \(matchArray[0])"
+            self.Diagnosis2.text = type[1] + ": \(matchArray[1])"
+            self.Diagnosis3.text = type[2] + ": \(matchArray[2])"
+            self.Diagnosis4.text = type[3] + ": \(matchArray[3])"
+            if (typeSize>4){
+                self.Diagnosis5.text = type[4] + ": \(matchArray[4])"
+                self.Diagnosis6.text = type[5] + ": \(matchArray[5])"
+                if (typeSize>6){                                            // These if statements make sure the data shows properly since we have
+                    self.Diagnosis7.text = type[6] + ": \(matchArray[6])"   //different amounts of audio files for each category
+                    
+                }
+            }
+            self.apexsup = type[maxLocationIndex!]
+            
+            switch maxLocationInt {
+            case 0:
+                self.Diagnosis1.textColor = UIColor.redColor()
+            case 1:
+                self.Diagnosis2.textColor = UIColor.redColor()
+            case 2:
+                self.Diagnosis3.textColor = UIColor.redColor()
+            case 3:
+                self.Diagnosis4.textColor = UIColor.redColor()
+            case 4:
+                self.Diagnosis5.textColor = UIColor.redColor()
+            case 5:
+                self.Diagnosis6.textColor = UIColor.redColor()
+            case 6:
+                self.Diagnosis7.textColor = UIColor.redColor()
+            default:
+                print("error has occurred changing text colour") //This probably wont happen
+            }
+            
+            //let diagnosisAlert = UIAlertController(title: "Diagnosis", message: "\(type[maxLocation!])", preferredStyle: .Alert)
+            //let okButton = UIAlertAction(title: "OK", style: .Default){(diagnosisAlert: UIAlertAction!)->Void in }
+            //diagnosisAlert.addAction(okButton)
+            //self.presentViewController(diagnosisAlert, animated: true, completion: nil)
+
+        })
+
+
+}
+*/
