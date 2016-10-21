@@ -36,7 +36,7 @@ class DetailViewController: UIViewController {
     var filterURL: NSURL!
     var initURL: NSURL!
     @IBAction func filterURL(sender: UIButton) {
-       /* switch (filterState) {
+        switch (filterState) {
         case 0: filterButton.backgroundColor = UIColor.greenColor()
                 filterButton.setTitle("Filter On", forState: UIControlState.Normal)
         
@@ -60,8 +60,8 @@ class DetailViewController: UIViewController {
             initURL = self.tmpStoreURL
         } else {
             initURL = self.directoryURL.URLByAppendingPathComponent(self.voice.filename!)
-        } */
-        
+        }
+        /*
         let bundle = NSBundle.mainBundle()
         var matchArray = [Float]()
         
@@ -70,18 +70,19 @@ class DetailViewController: UIViewController {
          var supine = ["AS-ESM", "AS-HSM","AS-LSM", "AS-MSC","AS-MSM","AS-Normal","AS-SplitS1"]
         
         let testUrl = bundle.URLForResource("supine_split_unchanged", withExtension: "aiff")!
-        //var detective = LBAudioDetectiveNew()
+        filterURL = lowPassFilter(testUrl)
+        
         var match: Float = 0.0
         for name in testRec {
             let sequenceURL = bundle.URLForResource(name, withExtension: "aiff")!
-            match = compareFingerprint(testUrl, sequenceURL)
+            match = compareFingerprint(filterURL, sequenceURL)
             //LBAudioDetectiveCompareAudioURLs(detective, testUrl, sequenceURL, 0, &match)
             print("Match =  \(match)")
             matchArray.append(match)
         }
         //LBAudioDetectiveDispose(detective)
         //var match = compareFingerprint(initURL, initURL)
-        //print("\(match)")
+        //print("\(match)")*/
         
     }
  
