@@ -20,7 +20,7 @@ float compareFingerprint(NSURL* inFileURL1, NSURL* inFileURL2) {
         printf("not enough data, record for more than 1.5 seconds!");
         return 0.0; //exit the function if we dont have a enough fingerprint
     }
-    BOOL fingerprintArray1[length1][128*32*2];
+    BOOL fingerprintArray1[length1][200*2];
     audioFingerprint(inFileURL1, fingerprintArray1);
     
     
@@ -30,7 +30,7 @@ float compareFingerprint(NSURL* inFileURL1, NSURL* inFileURL2) {
         printf("not enough data, record for more than 1.5 seconds!");
         return 0.0; //exit the function if we dont have a enough fingerprint
     }
-    BOOL fingerprintArray2[length2][128*32*2];
+    BOOL fingerprintArray2[length2][200*2];
     audioFingerprint(inFileURL2, fingerprintArray2);
     
     
@@ -79,7 +79,7 @@ float compareSubfingerprint(BOOL subfingerprint1[], BOOL subfingerprint2[]) {
     
     int hits = 0;
     int possibleHits = 0;
-    for (int i=0; i<(128*32*2); i+=2) {
+    for (int i=0; i<(200*2); i+=2) {
         BOOL sf1s1 = subfingerprint1[i];
         BOOL sf1s2 = subfingerprint1[i+1];
         

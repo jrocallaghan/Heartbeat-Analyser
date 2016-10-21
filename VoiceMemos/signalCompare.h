@@ -14,10 +14,10 @@
 
 
 
-void audioFingerprint(NSURL* inFileURL, BOOL fingerprintArray[][128*32*2]);
+void audioFingerprint(NSURL* inFileURL, BOOL fingerprintArray[][200*2]);
 void harrWavelet(float array[], int length);
 void fingerprintGet(float image[128][32], BOOL fingerprint[]);
-void quickSort( float a[2][128*32], int l, int r);
-int partition( float a[2][128*32], int l, int r);
+void quickSort( float a[3][128*32], int l, int r);
+int partition( float a[3][128*32], int l, int r);
 
 //#endif /* signalCompare_h */

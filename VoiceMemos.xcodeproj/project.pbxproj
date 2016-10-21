@@ -86,6 +86,13 @@
 		CF8682701D65D214000FC9F6 /* innocent.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CF86826E1D65D214000FC9F6 /* innocent.mp3 */; };
 		CF8682711D65D214000FC9F6 /* normal.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CF86826F1D65D214000FC9F6 /* normal.mp3 */; };
 		CFD93C0E1DB498D100AC4955 /* compareFingerprint.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD93C0D1DB498D100AC4955 /* compareFingerprint.m */; };
+		CFD93C151DBA5B7E00AC4955 /* supine_split_noise_tempo.aiff in Resources */ = {isa = PBXBuildFile; fileRef = CFD93C111DBA5B7E00AC4955 /* supine_split_noise_tempo.aiff */; };
+		CFD93C161DBA5B7E00AC4955 /* supine_split_noise.aiff in Resources */ = {isa = PBXBuildFile; fileRef = CFD93C121DBA5B7E00AC4955 /* supine_split_noise.aiff */; };
+		CFD93C171DBA5B7E00AC4955 /* supine_split_tempo.aiff in Resources */ = {isa = PBXBuildFile; fileRef = CFD93C131DBA5B7E00AC4955 /* supine_split_tempo.aiff */; };
+		CFD93C181DBA5B7E00AC4955 /* supine_split_unchanged.aiff in Resources */ = {isa = PBXBuildFile; fileRef = CFD93C141DBA5B7E00AC4955 /* supine_split_unchanged.aiff */; };
+		CFD93C1B1DBA5E5D00AC4955 /* supine_holo_tempo.aiff in Resources */ = {isa = PBXBuildFile; fileRef = CFD93C191DBA5E5D00AC4955 /* supine_holo_tempo.aiff */; };
+		CFD93C1C1DBA5E5D00AC4955 /* supine_holo_unchanged.aiff in Resources */ = {isa = PBXBuildFile; fileRef = CFD93C1A1DBA5E5D00AC4955 /* supine_holo_unchanged.aiff */; };
+		CFD93C1E1DBA6B5500AC4955 /* supine_split_phase.aiff in Resources */ = {isa = PBXBuildFile; fileRef = CFD93C1D1DBA6B5500AC4955 /* supine_split_phase.aiff */; };
 		F245F3FAC841E7AA0942992B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0588E348A241A320B4A31BFF /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -204,6 +211,13 @@
 		CF8682721D65D7F8000FC9F6 /* VoiceMemos-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VoiceMemos-Bridging-Header.h"; sourceTree = "<group>"; };
 		CFD93C0D1DB498D100AC4955 /* compareFingerprint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = compareFingerprint.m; sourceTree = "<group>"; };
 		CFD93C0F1DB4991700AC4955 /* compareFingerprint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = compareFingerprint.h; sourceTree = "<group>"; };
+		CFD93C111DBA5B7E00AC4955 /* supine_split_noise_tempo.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = supine_split_noise_tempo.aiff; sourceTree = "<group>"; };
+		CFD93C121DBA5B7E00AC4955 /* supine_split_noise.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = supine_split_noise.aiff; sourceTree = "<group>"; };
+		CFD93C131DBA5B7E00AC4955 /* supine_split_tempo.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = supine_split_tempo.aiff; sourceTree = "<group>"; };
+		CFD93C141DBA5B7E00AC4955 /* supine_split_unchanged.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = supine_split_unchanged.aiff; sourceTree = "<group>"; };
+		CFD93C191DBA5E5D00AC4955 /* supine_holo_tempo.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = supine_holo_tempo.aiff; sourceTree = "<group>"; };
+		CFD93C1A1DBA5E5D00AC4955 /* supine_holo_unchanged.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = supine_holo_unchanged.aiff; sourceTree = "<group>"; };
+		CFD93C1D1DBA6B5500AC4955 /* supine_split_phase.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = supine_split_phase.aiff; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -330,6 +344,7 @@
 			children = (
 				CF26EF6E1D86C7AF00930B07 /* LBAudioDetective */,
 				CF0174071D7D61DE007217AB /* heartbeats */,
+				CFD93C101DBA5B3E00AC4955 /* Test Recordings */,
 				CD1273D41AA7EBDC00D9D393 /* Controller */,
 				CD1273EE1AA7EBE800D9D393 /* Model */,
 				CD1273E31AA7EBE300D9D393 /* View */,
@@ -471,6 +486,21 @@
 			path = LBAudioDetective;
 			sourceTree = "<group>";
 		};
+		CFD93C101DBA5B3E00AC4955 /* Test Recordings */ = {
+			isa = PBXGroup;
+			children = (
+				CFD93C111DBA5B7E00AC4955 /* supine_split_noise_tempo.aiff */,
+				CFD93C121DBA5B7E00AC4955 /* supine_split_noise.aiff */,
+				CFD93C131DBA5B7E00AC4955 /* supine_split_tempo.aiff */,
+				CFD93C141DBA5B7E00AC4955 /* supine_split_unchanged.aiff */,
+				CFD93C191DBA5E5D00AC4955 /* supine_holo_tempo.aiff */,
+				CFD93C1A1DBA5E5D00AC4955 /* supine_holo_unchanged.aiff */,
+				CFD93C1D1DBA6B5500AC4955 /* supine_split_phase.aiff */,
+			);
+			name = "Test Recordings";
+			path = Controller;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -576,6 +606,7 @@
 				A7FBF7931DB5D9B500767ECB /* ALD-S3nHSM.aiff in Resources */,
 				A7FBF7921DB5D9B500767ECB /* ALD-S3Gallop.aiff in Resources */,
 				A7FBF7B61DB5D9DD00767ECB /* PS-SingleS2.aiff in Resources */,
+				CFD93C151DBA5B7E00AC4955 /* supine_split_noise_tempo.aiff in Resources */,
 				A7FBF79E1DB5D9C100767ECB /* AoS-SnDM.aiff in Resources */,
 				CD1273ED1AA7EBE300D9D393 /* VoiceTableViewCell.xib in Resources */,
 				A7FBF7AC1DB5D9CC00767ECB /* AS-SplitS1.aiff in Resources */,
@@ -586,19 +617,25 @@
 				A7FBF7941DB5D9B500767ECB /* ALD-S4Gallop.aiff in Resources */,
 				A7FBF7A81DB5D9CC00767ECB /* AS-LSM.aiff in Resources */,
 				A7FBF7B81DB5D9DD00767ECB /* PS-SplitS2T.aiff in Resources */,
+				CFD93C161DBA5B7E00AC4955 /* supine_split_noise.aiff in Resources */,
 				A7FBF7AB1DB5D9CC00767ECB /* AS-Normal.aiff in Resources */,
+				CFD93C1E1DBA6B5500AC4955 /* supine_split_phase.aiff in Resources */,
 				CD1273BF1AA7EB5F00D9D393 /* LaunchScreen.xib in Resources */,
 				A7FBF7A91DB5D9CC00767ECB /* AS-MSC.aiff in Resources */,
 				CF8682711D65D214000FC9F6 /* normal.mp3 in Resources */,
+				CFD93C1B1DBA5E5D00AC4955 /* supine_holo_tempo.aiff in Resources */,
 				A7FBF7B51DB5D9DD00767ECB /* PS-ESMwTSS2.aiff in Resources */,
 				CD1273BC1AA7EB5F00D9D393 /* Images.xcassets in Resources */,
 				A7FBF7A61DB5D9CC00767ECB /* AS-ESM.aiff in Resources */,
+				CFD93C1C1DBA5E5D00AC4955 /* supine_holo_unchanged.aiff in Resources */,
 				A7FBF7B41DB5D9DD00767ECB /* PS-ESMwSS2.aiff in Resources */,
 				A7FBF7961DB5D9B500767ECB /* ALD-SCwLSM.aiff in Resources */,
 				A7FBF7AA1DB5D9CC00767ECB /* AS-MSM.aiff in Resources */,
 				CF8682701D65D214000FC9F6 /* innocent.mp3 in Resources */,
+				CFD93C181DBA5B7E00AC4955 /* supine_split_unchanged.aiff in Resources */,
 				A7FBF79D1DB5D9C100767ECB /* AoS-SMwAS2.aiff in Resources */,
 				A7FBF7A71DB5D9CC00767ECB /* AS-HSM.aiff in Resources */,
+				CFD93C171DBA5B7E00AC4955 /* supine_split_tempo.aiff in Resources */,
 				A7FBF79B1DB5D9C100767ECB /* AoS-EDM.aiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

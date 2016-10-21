@@ -12,7 +12,7 @@
 
 #define kSamplingRate 5512.0
 #define kNumChannels 1
-void audioFingerprint(NSURL* inFileURL, BOOL fingerprintArray[][128*32*2]) {
+void audioFingerprint(NSURL* inFileURL, BOOL fingerprintArray[][200*2]) {
 
 
     
@@ -213,7 +213,7 @@ void audioFingerprint(NSURL* inFileURL, BOOL fingerprintArray[][128*32*2]) {
     
     /////////////////PERFORM WAVELET TRANSFORM ON ARRAY//////////////////////
 
-    BOOL fingerprint[128*32*2]; //temp fingerprint to be put in the main fingerprint array
+    BOOL fingerprint[200*2]; //temp fingerprint to be put in the main fingerprint array
     
     float imageBlock[128][32];
     
@@ -254,7 +254,7 @@ void audioFingerprint(NSURL* inFileURL, BOOL fingerprintArray[][128*32*2]) {
         
         //put fingerprint in the main array
         
-        for (int j=0; j<(128*32*2); j++) {
+        for (int j=0; j<(200*2); j++) {
             fingerprintArray[i][j]= fingerprint[j];
         }
     }
@@ -306,49 +306,38 @@ void fingerprintGet(float image[128][32], BOOL fingerprint[]){
     int numRows=128;
     int numCols=32;
     
-    float array[2][numRows*numCols];
-    
+    float array[3][numRows*numCols];
     //create array holding all the image elements in 1 row and its indexes in the other row
     int index=0;
     for (int row =0; row<numRows; row++) {
         for (int col =0; col<numCols; col++) {
-            array[0][index] = image[row][col];
+            array[0][index] = fabs(image[row][col]);
             array[1][index] = index;
+            array[2][index] = image[row][col];
+            //printf("\n%f",array[0][index]);
             //printf("\n%i",index);
             index++;
         }
     }
-    //sort the array by magnitude and hold the index
-    /*for (int i=0; i<200; i++) {
-        printf("%f  ",array[0][i]);
-    }*/
-    
-    //printf("\n\n\n");
+
     
     quickSort(array, 0, 128*32-1);
 
-    /*for (int i=0; i<200; i++) {
-        printf("%f  ",array[0][i]);
-    }*/
-    //first we need to extract top 200 wavelets
-    
-    for (int i=0; i<200; i++) {
-        if (array[0][i]>0.0) {
-            fingerprint[(int)(2*array[1][i])] = YES;
+    int counter = 0;
+    for (int i=4096-1; i>(4096-200-1); i--) {
+        if (array[2][i]>0.0) {
+            fingerprint[2*counter] = YES;
         }
-        else if (array[0][i]<0.0) {
-            fingerprint[(int)((2*array[1][i]))+1] = YES;
+        else if (array[2][i]<0.0) {
+            fingerprint[(2*counter)+1] = YES;
         }
-        
+        //printf("\n%f",array[0][i]);
+        counter++;
     }
-    
-    
-    
-    
 }
 
 
-void quickSort( float a[2][128*32], int l, int r)
+void quickSort( float a[3][128*32], int l, int r)
 {
     int j;
     
@@ -364,9 +353,9 @@ void quickSort( float a[2][128*32], int l, int r)
 
 
 
-int partition( float a[2][128*32], int l, int r) {
+int partition( float a[3][128*32], int l, int r) {
     int  i, j;
-    float pivot, t, q;
+    float pivot, t, q, p;
     pivot = a[0][l];
     i = l; j = r+1;
     
@@ -377,9 +366,11 @@ int partition( float a[2][128*32], int l, int r) {
         if( i >= j ) break;
         t = a[0][i]; a[0][i] = a[0][j]; a[0][j] = t;
         q = a[1][i]; a[1][i] = a[1][j]; a[1][j] = q;
+        p = a[2][i]; a[2][i] = a[2][j]; a[2][j] = p;
     }
     t = a[0][l]; a[0][l] = a[0][j]; a[0][j] = t;
     q = a[1][l]; a[1][l] = a[1][j]; a[1][j] = q;
+    p = a[2][l]; a[2][l] = a[2][j]; a[2][j] = p;
     return j;
 }
 
