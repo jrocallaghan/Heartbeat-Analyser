@@ -97,7 +97,7 @@ NSURL* lowPassFilter(NSURL* inFileURL) {
     
     //////////////////FILTER/////////////////
     
-    float Fc = 2000.0;
+    float Fc = 500.0;
     float Q = 1/sqrt(2);
     float samplingRate = kSamplingRate;
     
