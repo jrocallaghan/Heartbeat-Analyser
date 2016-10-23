@@ -20,7 +20,6 @@ under ECSE Department of Monash University Australia. (2016)
  
  - Providing information and websearch links to classified heart issues
 
- - Compatible with most iOS devices 
 
 
 ## Requirements
@@ -31,7 +30,10 @@ under ECSE Department of Monash University Australia. (2016)
 ## Reference
  - Audio recording functions are sourced from MoZhouqi (https://github.com/MoZhouqi/VoiceMemos)
  - Audio fingerprinting library are sourced from Laurin Brandner (https://github.com/lbrndnr/LBAudioDetective)
+ - Audio plot using FDWaveformView (https://github.com/fulldecent/FDWaveformView)
+ - Lowpass filter coefficients equations sourced from NVDSP (https://github.com/bartolsthoorn/NVDSP)
+ - Audio file writing sourced form EAFWrite (dirac library) 
 
 ## Licenses
-VoiceMemos is released under the MIT license. See LICENSE for details.
-LBAudioDetective is licensed under the MIT License.
+Heartbeat-Analyser is released under the MIT license. See LICENSE for details.
+
